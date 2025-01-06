@@ -1,0 +1,58 @@
+perecheInversabila:                      #pushl $matrice1
+ pushl %ebp 
+ movl %esp,%ebp
+ pushl %ebx
+ 
+ pushl 20(%ebp)
+ pushl 16(%ebp)
+ pushl 8(%ebp)
+ call reciprocInverse
+ popl %ebx
+ popl %ebx
+ popl %ebx
+ 
+ cmp $1,%eax
+ je afisare12
+ 
+ pushl 20(%ebp)
+ pushl 12(%ebp)
+ pushl 8(%ebp)
+ call reciprocInverse
+ popl %ebx
+ popl %ebx
+ popl %ebx
+ 
+ cmp $1,%eax
+ je afisare13
+ 
+ pushl 16(%ebp)
+ pushl 12(%ebp)
+ pushl 8(%ebp)
+ call reciprocInverse
+ popl %ebx
+ popl %ebx
+ popl %ebx
+ 
+ cmp $1,%eax
+ je afisare23
+ 
+afisare12:
+ lea 20(%ebp),%eax
+ lea 16(%ebp),%ecx
+ jmp scot
+afisare13:
+ lea 20(%ebp),%eax
+ lea 12(%ebp),%ecx 
+ jmp scot
+afisare23:
+ lea 12(%ebp),%eax
+ lea 16(%ebp),%ecx 
+ jmp scot
+ 
+ movl -1,%eax
+ movl -1,%ecx
+
+scot: 
+ popl %ebx
+ popl %ebp
+ret
