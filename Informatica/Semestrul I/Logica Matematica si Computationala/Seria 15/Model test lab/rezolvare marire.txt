@@ -1,0 +1,66 @@
+
+%rand 1
+
+%ex 1 duplicate/2
+
+duplicate([], []).
+duplicate([H|T], [H,H|R]) :- length([H|T], Lungime), Lungime mod 2 =:= 0, duplicate(T, R).
+duplicate([H|T], [H|R]) :- length([H|T], Lungime), Lungime mod 2 =\= 0, duplicate(T, R).
+
+% daca lista de intrare este goala, atunci si lista rezultat este goala
+% daca lungimea listei este para, adauga elementul curent de 2 ori in lista rezultat si merge mai departe recursiv
+% daca lungimea listei este impara, adauga doar elementul curent si merge mai departe recursiv
+
+% ?- duplicate([1, 2, 3, 4, 5, 6], R).
+% R = [1, 1, 2, 3, 3, 4, 5, 5, 6]
+% ?- duplicate([a, b, c, d], R).
+% R = [a, a, b, c, c, d]
+
+
+
+%ex 2 max_coord_sum/2
+
+max_coord_sum([P], P).
+max_coord_sum([p(X1,Y1), p(X2,Y2)|T], R) :-
+    S1 is X1 + Y1,
+    S2 is X2 + Y2,
+    (S1 > S2 -> max_coord_sum([p(X1,Y1)|T], R);
+     max_coord_sum([p(X2,Y2)|T], R)).
+
+% daca lista contine un singur punct, acela este punctul cu suma coordonatelor maxima si returnam P
+% pentru doua puncte consecutive, se calculeaza suma coordonatelor pentru ambele S1 si S2
+% daca suma coordonatelor primului punct este mai mare decat a celui de-al doilea adica S1>S2, se continua cautarea cu primul punct si restul listei. altfel, se continua cu al doilea punct
+
+% ?- max_coord_sum([p(1, 2), p(4, 0), p(6, 3)], R).
+% R = p(6, 3)
+% ?- max_coord_sum([p(0, 1), p(2, 1)], R).
+% R = p(2, 1)
+
+
+%ex3 one_neg/1
+
+% daca formula este o negatie a unei propozitii (care nu este o alta negatie), atunci este posibil sa fie o formula valida, dar verificam si ca restul formulei nu conține alte negatii
+one_neg(non(X)) :- \+ contains_neg(X).
+
+one_neg(sau(X, Y)) :- (one_neg(X), \+ contains_neg(Y)); (\+ contains_neg(X), one_neg(Y)).
+one_neg(si(X, Y)) :- (one_neg(X), \+ contains_neg(Y)); (\+ contains_neg(X), one_neg(Y)).
+one_neg(imp(X, Y)) :- (one_neg(X), \+ contains_neg(Y)); (\+ contains_neg(X), one_neg(Y)).
+one_neg(echiv(X, Y)) :- (one_neg(X), \+ contains_neg(Y)); (\+ contains_neg(X), one_neg(Y)).
+
+contains_neg(non(_)).
+contains_neg(sau(X, Y)) :- contains_neg(X); contains_neg(Y).
+contains_neg(si(X, Y)) :- contains_neg(X); contains_neg(Y).
+contains_neg(imp(X, Y)) :- contains_neg(X); contains_neg(Y).
+contains_neg(echiv(X, Y)) :- contains_neg(X); contains_neg(Y).
+
+
+% daca gasim o negatie, verificam ca restul expresiei nu conține alte negatii
+% pentru toate formele de expresii logice (sau, si, imp, echiv), verificam recursiv fiecare componenta pentru a ne asigura ca exista exact o negatie in formula
+
+
+% ?- one_neg(non(non(a)))
+% false
+% ?- one_neg(non(a))
+% true
+% ?- one_neg(sau(a, si(non(b), non(c))))
+% false

@@ -1,0 +1,936 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amssymb,amsmath}
+\usepackage{lipsum}
+\usepackage[left=20mm,right=20mm,top=20mm,bottom=20mm,paper=a4paper]{geometry}
+
+\title{Cursuri logic\u{a} matematic\u{a}}
+
+\begin{document}
+
+\maketitle
+\setlength{\parindent}{10pt}
+\setlength{\parskip}{0.5\baselineskip}
+
+\section{Curs 1}
+
+\subsection{Teoria mul\c{t}imilor \c{s}i axiomele ZFC}
+
+\textbf{Teorem\u{a} (Paradoxul lui Russell)} : Nu exist\u{a} o mul\c{t}ime R astfel \^{i}nc\^{a}t pentru orice $x$, $[x \in R \iff x\notin x]$.
+
+\begin{enumerate}
+    \item \textbf{Axioma extensionalit\u{a}\c{t}ii}: Pentru orice $x,y$, avem c\u{a} dac\u{a} pentru orice $z$, [$z \in x \iff z\in y$], atunci $x=y$.
+
+\textbf{Teorem\u{a}}: Exist\u{a} cel mult o mul\c{t}ime vid\u{a}.
+
+    \item \textbf{Axioma comprehensiunii}: Pentru orice $x$ \c{s}i pentru orice "proprietate" P, exist\u{a} o mul\c{t}ime $y$, astfel \^{i}nc\^{a}t pentru orice $z$, avem $z\in y \iff z\in x$ \c{s}i $P(z)$.
+
+\textbf{Teorem\u{a}}: Nu exist\u{a} mul\c{t}imea tuturor mul\c{t}imilor, adic\u{a} o mul\c{t}ime c\u{a}reia s\u{a} \^{i}i apar\c{t}in\u{a} orice mul\c{t}ime. Ca urmare, pentru orice $x$ exist\u{a} $y$ cu $y\notin x$.
+
+
+\textbf{Teorem\u{a}}: Exist\u{a} o mul\c{t}ime vid\u{a}.
+
+    \item \textbf{Axioma perechii}: Pentru orice $x,y$ exist\u{a} z a.\^{i} $x\in z$ \c{s}i $y\in z$.
+
+O mul\c{t}ime de forma $\{x\}$ s.n. \textbf{singleton}. Not\u{a}m cu 0:=$\emptyset$, 1:=$\{\emptyset\}$, 2:=$\{0,1\}$.
+
+    \item \textbf{Axioma reuniunii}: Pentru orice $F$ exist\u{a} $x$ a.\^{i}. pentru orice $y,z$ cu $z\in y$ \c{s}i $y\in F$ avem $z\in x$.
+    
+Ca mai \^ inainte putem folosi axioma comprehensiunii pentru a ob\c tine , pentru fiecare F mul\c timea  care con\c tine exact acei z a. \^ i. exist\u a $y \in F$ cu $z\in y$. Vom nota aceast\u a mul\c time cu $\bigcup F$ \c si o vom numi \textbf{reuniunea} mul\c timii F.
+
+Aten\c tie! Aceasta nu este reuniunea obi\c snuit\u a a dou\u a mul\c timi, ci este, practic "reuniunea tuturor mul\c timilor din F".
+
+$x\cup y :=\bigcup \{x,y\}$\\
+Inductiv: $\{x,y,z\}:=\bigcup \{\{x,y\},z\}=\{x,y\}\cup \{z\}$
+
+Definim pentru orice $x$, $x^+:=x\cup \{x\}$, numind aceast\u a mul\c time \textbf{succesorul} lui x.
+
+    \item \textbf{Axioma mul\c timilor p\u ar\c tilor}: Pentru orice $x$ exist\u a $y$ astfel \^ inc\^ at pentru orice $z$ cu $z\subseteq x$ avem $z \in y$.
+
+\textbf{Propozi\c tie}: Fie $x,y,X,Y$ cu $x\in X$ \c si $y\in Y$. Atunci $(x,y)\in P(P(X\cup Y))$.
+
+\textbf{Def:} $X\times Y:= \{ w\in P(P(X\cup Y)) |$ exist\u a $x\in X,y\in Y$ cu $w=(x,y)\}$ con\c tine toate perechile ordonate din X cu Y \c si se nume\c ste \textbf{produsul cartezian} al lui X \c si Y.
+
+\textbf{Def:} Dac\u a F = mul\c time nevid\u a, def. \textbf{intersec\c tia} mul\c timii F ca fiind $\bigcap F:=\{ z\in \bigcup F|$ pentru orice $x$ cu $x\in F,$ avem $z\in x$.
+
+\textbf{Def:} Fie $X$ o mul\c time. Numim o mul\c time $A\subseteq P(X)$ \textbf{mul\c time Moore} pe $X$ dac\u a $X\in A$, iar pentru orice $B\subseteq A$ nevid\u a avem $\bigcap B=A$.
+
+\textbf{Teorem\u a:} Fie $X$ o mul\c time \c si $A$ o mul\c time Moore pe $X$. Atunci exist\u a un unic $C\in A$, numit \textbf{minimul lui $A$}, astfel \^ inc\^ at pentru orice $D\in A$, avem $C\subseteq D$.
+
+\end{enumerate}
+
+\section{Curs 2}
+
+\subsection{Rela\c tii binare}
+
+\textbf{Propozi\c tie-Defini\c tie:} Fie $R$ o mul\c time. Urm\u atoarele afirma\c tii sunt echivalente:
+\begin{itemize}
+    \item exist\u a $A$ \c si $B$ a. \^ i. $R\subseteq A\times B$
+    \item elementele lui $R$ sunt perechi ordonate.
+\end{itemize}
+\^ In acest caz, $R$ s.n. \textbf{rela\c tie (binar\u a)}, iar dac\u a $A,B$ sunt ca mai sus, spunem ca $R$ = \textbf{rela\c tie \^ intre A \c si B}.
+
+\subsection{Grafice \c si func\c tii}
+
+\textbf{Def:} Dac\u a $A$= mul\c time, not\u am cu $\Delta_A$ \c si denumim \textbf{rela\c tia diagonal\u a} pe $A$: $\{p\in A\times A|$ exist\u a $a$ a. \^ i. $p=(a,a)\}$.
+
+\textbf{Def:} Fie $A,B$ mul\c timi \c si $R$ o rela\c tie \^ intre $A$ \c si $B$. Spunem c\u a $R$ este \textbf{grafic \^ intre $A$ \c si $B$} dac\u a pentru orice $a\in A$ exist\u a \c si e unic $b\in B$ a.\^ i. $(a,b)\in R$.
+
+\textbf{Def:} Fie $A,B$ dou\u a mul\c timi. Spunem c\u a $f$ este \textbf{func\c tie \^ intre A \c si B} (not\u am cu $f: A \rightarrow B$ dac\u a exist\u a $R$ un grafic \^ intre $A$ \c si $B$ a.\^ i. $f=(A,B,R)$. Pentru orice $a\in A$ not\u am cu $f(a)$ acel unic $b\in B$ a.\^ i. $(a,b)\in R$.
+
+\textbf{Propozi\c tie:} Fie $R$ o rela\c tie binar\u a. U.A.S.E:
+\begin{itemize}
+    \item exist\u a $A,B$ a.\^ i. $R$ = grafic intre $A$ \c si $B$
+    \item $\forall x,y,z$ cu $(x,y),(x,z) \in R$, avem $y=z$ \c si vom nota $R(x):=y=z$.
+\end{itemize}
+
+\textbf{Propozi\c tie:} Fie $R$ o rela\c tie binar\u a \c si $A,B,C,D$ a.\^ i. $R$ este grafic at\^ at \^ intre $A$ \c si $B$, c\^ at \c si \^ intre $C$ \c si $D$. Atunci $A=C$.
+
+\textbf{Nota\c tii:}
+\begin{itemize}
+    \item $B^A:= \{f \in (\{A\}\times \{B\}\times P(A\times B)| f$ func\c tie $\}$.
+    \item $f_*(X):=\{y\in B| $exist\u a $x\in X $ cu $f(x)=y \}$ \c si s.n. \textbf{imaginea direct\u a} a lui $X$ prin $f$.
+    \item $f^*(Y):= \{ x\in A| f(x)\in Y\}$ \c si s.n. \textbf{imaginea invers\u a} a lui $Y$ prin $f$.
+    \item Im$f$:=$f_*(A)$.
+\end{itemize}
+
+\textbf{Obs:} Exist\u a o unic\u a func\c tie $f=(\emptyset, A,B)=(\emptyset,A,\emptyset)$ \c si s.n. \textbf{func\c tia vid\u a}. Atunci avem $A^\emptyset=A^0$ este un sigleton, iar $\emptyset$ este \textbf{mul\c timea ini\c tial\u a}. Atunci obligatoriu $A=\emptyset$.
+
+\subsection{Comportamentul singleton-urilor fa\c ta de func\c tii}
+
+Fix\u am un $X$ singleton.\\
+Fie $A$=mul\c time.\\
+\begin{itemize}
+    \item Exist\u a o unic\u a func\c tie $f:A \rightarrow X \implies \forall$ singleton este o \textbf{mul\c time terminal\u a} (no\c tiune \textbf{dual\u a} celei de mul\c time ini\c tial\u a).
+    \item Acum c\u aut\u am $f:X \rightarrow A \iff$ select\u am elementul din $A$ \^ in care va fi dus acel unic elemnt din $X$. $\forall a\in A$, not\u am $\langle a \rangle :=\{(0,a)\}$ \c si cu $[a]_A:=(1,A,\langle a\rangle )$ (acea unica fun\c tie cu dom. 1 \c si codom. $A$ care duce singurul elem. al lui 1 \^ in $a$).
+
+\end{itemize}
+
+\subsection{Tipuri de rela\c tii binare pe o mul\c time}
+
+\textbf{Defini\c tie:} Fie $A$ o mul\c time \c si $R$ o rela\c tie pe $A$. Not\u am $xRy$ $(x,y)\in R$. Atunci spunem c\u a $R$ este:
+\begin{itemize}
+    \item \textbf{total\u a} dac\u a $\forall x,y\in A$ avem $xRy$ sau $yRx$.
+    \item \textbf{antisimetric\u a} dac\u a $\forall x,y\in A$ a.\^ i. $xRy$ \c si $yRx \implies$ $x=y$
+    \item \textbf{de ordine par\c tial\u a ($\leq$)} dac\u a este reflexiv\u a, antisimetric\u a \c si tranzitiv\u a.
+    \item \textbf{ireflexiv\u a} dac\u a $\forall x\in A$ nu avem $xRx$
+    \item \textbf{asimetric\u a} dac\u a $\forall x,y\in A$ cu $xRy$ nu avem $yRx$
+\end{itemize}
+
+\textbf{Prop-def:} Fie $A$=mul\c time, $R$= rel tranz pe $A$. U.A.S.E:
+\begin{itemize}
+    \item $R$ e ireflexiv\u a
+    \item $R$ e asimetric\u a
+\end{itemize}
+\^ In acest caz, $R$s.n. \textbf{rela\c tie de ordine strct\u a} ($<$).
+
+\textbf{Def:} Fie $A$= mul\c time \c si $\leq$ ordinea par\c tial\u a pe $A$. Spunem c\u a $\leq$ este o rel. de \textbf{bun\u a ordine}, dc. $\forall B \neq \emptyset$ submul\c time a lui $A$ are un elem. minim.
+
+\subsection{Mul\c timi inductive}
+
+\textbf{Def:} O mul\c time $A$ s.n. \textbf{inductiv\u a} dc. $\emptyset \in A$ \c si $\forall x\in A \implies x^+ \in A$.
+
+\textbf{Axioma infinitului:} Exist\u a o mul\c time inductiv\u a.
+
+\textbf{Obs:} Dc. $F$= mul\c time nevid\u a de mul\c timi inductive $\implies \bigcap F$ este inductiv\u a.
+
+\textbf{Def:} O mul\c time inductiv\u a s.n. \textbf{minimal inductiv\u a} dc. $\forall B \subseteq A$ inductiv\u a $\implies B=A$.
+
+\textbf{Prop:} Fie $A$ minimal inductiv\u a $\implies \forall B$ inductiv\u a avem $A\subseteq B$. (avem cel mult o m\c t. minimal inductiv\u a)
+
+\textbf{Prop:} Fie $u$ inductiv\u a \c si not\u am cu $F:=\{x\in P(u)|x$ inductiv\u a $\}$. Atunci $y:=\bigcap F$ este unica mul\c time minimal inductiv\u a.
+
+\subsection{\c Siruri}
+
+\textbf{Def:} Fie $A$= mul\c time. Numim \textbf{ \c sir $A$-valuat} o familie care are imaginea inclus\u a \^ in $A$ \c si domeniu fie un $n$ nr. nat (\c sir finit), fie $\mathbb R$
+
+\textbf{Nota\c tie:}
+\begin{itemize}
+    \item \textbf{$\text{Seq}_\text{fin}(A)$}:= mul\c timea tuturor \c sirurilor $A$-valuate finite.
+    \item \textbf{$\text{Seq}_n(A)$}:= mul\c timea tuturor \c sirurilor $A$-valuate de lungime $n$.
+\end{itemize}
+
+\textbf{Teorema recursiei:} Fie $A$= mul\c time, $a\in A, g:P\times A\times \mathbb N \rightarrow A$. Atunci exist\u a o unic\u a func\c tie $f: \mathbb{N} \rightarrow A$ a.\^ i. $f(0)=a$ \c si $\forall n\in \mathbb, f(n^+)=g(f(n),n)$.
+
+\textbf{Teorema recursiei complete:} Fie $A$=mul\c time, $g:\text{Seq}_\text{fin}(A)\rightarrow A \implies \exists ! f:\mathbb N \rightarrow A$ a.\^ i. $\forall n\in \mathbb N$ avem $f(n)=g((f(i))_{i<n})$.
+
+\textbf{Teorema recursiei parametrizate:} Fie $A,P$= mul\c timi, $a:P \rightarrow A, g:P\times \mathbb N \rightarrow A \implies \exists ! f:P\times \mathbb N \rightarrow A$ a. \^ i. $\forall p\in P, f(p,0)=a(p)$ \c si $\forall p\in P, \forall n\in \mathbb N, f(p,n^+)=g(p,f(p,n),n)$.
+
+\subsection{Dinamici punctate}
+
+\textbf{Def:} Un triplet $(A,z,s)$ s.n. \textbf{dinamic\u a punctat\u a} dc. $z \in A$ \c si $s:A\rightarrow A$.
+
+Ex: $(\mathbb,0,(.)^+)$
+
+\textbf{Def:} Fie $(A,z,s),(A',z',s')$ dinamici punctate. Un \textbf{morfism} \^ intre ele este o func\c tie $f:A\rightarrow A'$ cu $f(z)=z'$ \c si $\forall a \in A, f(s(a))=s'(f(a))$.
+
+\textbf{Def:} O dinamic\u a punctat\u a $(A,z,s)$ s.n. \textbf{ini\c tial\u a} dac\u a pt. orice dinamic\u a punctat\u a $(A',z',s') \exists !$ morfism $f:A \rightarrow A'$.
+
+\textbf{Prop:} $\forall$ 2 dinamici ini\c tiale sunt izomorfe.
+
+\textbf{Prop:} Dac\u a 2 dinamici sunt izomorfe, iar una este ini\c tial\u a, atunci \c si cealalt\u a este ini\c tial\u a.
+
+\textbf{Def:} O dinamic\u a punctat\u a $(A,z,s)$ s.n. \textbf{Peano} dc:
+\begin{enumerate}
+    \item $z \notin \text{Im}s$
+    \item $s$ injectiv\u a
+    \item $\forall B\subseteq A$ cu $z\in B$ \c si $s_*(B)\subseteq B \implies B=A$.
+\end{enumerate}
+
+\textbf{Prop:} Dac\u a 2 dinamici sunt izomorfe, iar una este Peano \c si cealalt\u a este Peano.
+
+\textbf{Prop(Th Dedekind):} Orice dinamic\u a punctat\u a Peano este izomorf\u a cu $(\mathbb N, 0, (.)^+)$.
+
+\textbf{Prop:} O dinamic\u a punctat\u a este ini\c tial\u a dac\u a \c si numai dac\u a este Peano.
+
+\section{Curs 3}
+
+\subsection{Mul\c timi finite}
+
+\textbf{Lem\u a:} Un num\u ar (\c si ca urmare o m\c t. finit\u a) nu este \^ in bijec\c tie cu o parte a sa.
+
+\textbf{Corolar:}
+\begin{itemize}
+    \item Dc. $n\neq m \in \mathbb N$, nu exist\u a bij. \^ intre $n$ \c si $m \implies$ nr. elem. m\c t. finit\u a este unic.
+    \item $f:\mathbb N \rightarrow \mathbb N-\{0\}, f(n)=n^+$ este bij $\implies \mathbb N$ este infinit\u a.
+\end{itemize}
+
+\textit{Dem:}
+\begin{itemize}
+    \item Dc. $n\neq m \implies m<n$ sau $n<m$. Pp.w.l.o.g c\u a $n<m$. Atunci $\forall p<n \implies p<m \implies n\subset m$. Din lema anterioar\u a avem concluzia.
+    \item injectivitatea a fost dem. mai devreme, iar surj. rezult\u a dintr-un ex. de seminar.
+\end{itemize}
+
+\textbf{Def:} Fie $A,B$. Spunem c\u a $A$ \textbf{are cadinalul mai mic sau egal ca }$B$ (notat $A \preceq B$) dc. exist\u a o inj. de la $A$ la $B$.
+
+\textbf{Prop:} Fie $A,B,C.$ Atunci:
+\begin{itemize}
+    \item Dc. $A\preceq B$ \c si $A\sim C$, atunci $C\preceq B$
+    \item Dc. $A \preceq B$ \c si $B\sim C$, atunci $A\preceq C$.
+    
+\end{itemize}
+
+\textbf{Teorema Cantor-Bernstein-Schr\" oder:} Dc. $X\preceq Y$ \c si $Y\preceq X \implies X\sim Y$.
+
+\textbf{Lem\u a:} Fie $A_1 \subseteq B \subseteq A$ \c si $A\sim A_1 \implies A\sim B$.
+
+\subsection{Mul\c timi num\u arabile}
+
+$A$ \textbf{num\u arabil\u a} dc. $A=|\mathbb N|=$\textbf{$\aleph_0$}.
+
+\textbf{Prop:} Dc. $A$ este infinit\u a, $|B|=\aleph_0$ \c si $A\subseteq B \implies |A|=\aleph_0$.
+
+\textbf{Prop-Def:} Fie $A$ o mul\c time. UASE:
+\begin{itemize}
+    \item $A$ este finit\u a sau num\u arabil\u a
+    \item exist\u a $B$ num\u arabil\u a \c si $f:A\rightarrow B$ inj.
+\end{itemize}
+Atunci $A$ s.n. \textbf{cel mult num\u arabil\u a}.
+
+\textbf{Prop: }Fie  $A,B$ num\u arabile $\implies A\cup B$ num\u arabil\u a.
+
+\textbf{Prop:} Mul\c timea $\mathbb N \times \mathbb N$ este num\u arabil\u a.
+
+\textbf{Prop:} Fie $(A_n)_{n \in \mathbb N}$ \c si $f_n: \mathbb N \rightarrow A_n$ surjec\c tie. Atunci $\bigcup_{n \in \mathbb N}A_n$ este cel mult num\u arabil\u a.
+
+\textbf{Prop:} Mul\c timea $\text{Seq}_\text{fin}(\mathbb N)$ este num\u arabil\u a.
+
+\textbf{Prop:} Pentru orice $X,P(X)\sim 2^X.$
+
+\textbf{Prop:} $\forall X$ nu exist\u a surj. de la $X$ la $P(X)\implies |X|<|P(X)|$.
+
+\textbf{Prop:} $P(\mathbb N)\sim \mathbb R$.
+
+\textbf{Def:} Pt. $a,b$ 2 cardinali, aleg $A,B$ cu $|A|=a,|B|=b, A\cap B=\emptyset$ \c si punem:
+\begin{itemize}
+    \item \textbf{$a+b$}:=$|A\cup B|$
+    \item \textbf{$a\cdot b$}:=$|A\times B|$
+    \item \textbf{$a^b$}:=$|A^B|$.
+\end{itemize}
+
+\textbf{Prop:} $\forall a$ cardinal, $a+a=2\cdot a$.
+
+\textbf{Prop. exponen\c tiere:}
+\begin{itemize}
+    \item $0<a \implies b<b^a$
+    \item $1<b \implies a\leq b^a$
+\end{itemize}
+
+\textbf{Prop-def:} $2^{\aleph_0}=c$ s.n. \textbf{cardinalul(puterea) continuumului} \c si:
+\begin{itemize}
+    \item $\forall n>0, |\mathbb R^n|=c$
+    \item $|\mathbb C|=c$
+    \item $|\mathbb N^{\mathbb N}|=c$
+    \item $|\mathbb R^{\mathbb N}|=c$
+\end{itemize}
+
+\section{Curs 4}
+
+\subsection{Ordinali}
+
+\textbf{Prop:} Fie $(W,<)$ o m\c t. bine ord. \c si $s\subset W$ a.\^ i. $\forall x\in W, y\in S$ cu $x<y \implies x\in S$. Atunci avem c\u a exist\u a $a\in W$ a.\^ i. $S=\{x\in W| x<a\}:=W[a]$.
+
+\textbf{Def:} O m\c t. s.n. \textbf{tranzitiv\u a} dac\u a $\forall x\in T \implies x\subseteq T$.
+
+\textbf{Nota\c tie:} $\in_A:=\{(x,y)\in A\times A| x\in y\}$ \c si $\omega=\mathbb N$.
+
+\textbf{Def:} O m\c t. $\alpha$ s.n. \textbf{ordinal} dac\u a este tranzitiv\u a \c si $(\alpha, \in_{\alpha})$ este mul\c time bine ordonat\u a.
+
+\textbf{Prop:} Dac\u a $\alpha,\beta$ sunt ordinali, atunci:
+\begin{itemize}
+    \item $\alpha \notin \alpha$
+    \item $\alpha^+$ ordinal
+    \item $\beta\in \alpha \implies \beta$ ordinal
+    \item $\alpha \subset\beta \implies \alpha\in\beta$
+\end{itemize}
+
+\textbf{Def:} Un ordinal \^ in care nu este 0/ ordinal succesor s.n.\textbf{ordinal limit\u a}.
+
+\textbf{Prop:} Fie $P$ o proprietate \c si $\alpha$ un ordinal a.\^ i. $P(\alpha)\implies \exists \beta$ ordinal a.\^ i. $\forall \gamma$ ordinal cu $P(\gamma) \implies \beta \leq \gamma$.
+
+\textbf{Prop:} Fie $X$ o m\c t. ale c\u arei elem. sunt ordinali. Not\u am cu \textbf{sup$X:=\bigcup X$}.Atunci:
+\begin{itemize}
+    \item sup$X$ este ordinal
+    \item $\forall \alpha\in X,\alpha\leq \text{sup}X$
+    \item $\forall \gamma$ ordinal a.\^ i. $\forall \alpha\in X,\alpha\leq\gamma \implies \text{sup}X\leq \gamma$
+    \item $(\text{sup}X)^+\notin X \implies\exists \alpha$ ordinal cu $\alpha\notin X$.
+\end{itemize}
+
+\textbf{Prop:} Ordinalul $\omega$ este limit\u a.
+
+\^ In continuare vom dem. c\u a ordinalii form. un \textbf{pseudo} sistem complet de reprezentatn\c ti pt. \textbf{pseudo} rela\c tia de izomorfism \^ intre m\c t. bine ord.
+
+\textbf{Teorem\u a:} Fie $(W, <)$ o m\c t. bine ord. Atunci $\exists \alpha$ ordinal a. \^ i. $(W,<)\sim (\alpha,\in_{\alpha})$.
+
+\textbf{Axioma \^ inlocuirii:} Pt. orice opera\c tie $F$ \c si orice m\c t. $A$, exist\u a o m\c t. $B$ a. \^ i. $\forall x\in A, F(x)\in B$.
+
+\[ G(a) := \left\{ \begin{array}{l l} \text{acel ordinal }\beta \text{ izomorf cu } W[a] & \quad \text{dc. $a\in T$ }\\ \emptyset & \quad \text{altfel}\\ \end{array} \right. \]
+
+Atunci vom avea $\alpha=\{G(a)|a\in T\}$.
+
+\subsection{Induc\c tia pe ordinali}
+
+\textbf{Pp. induc\c tiei complete (pp II induc\c tie) pe ordinali:} Fie $P$ o proprietate \c si pp c\u a pt. orice ordinal $\alpha$ avem c\u a dc. $\forall\beta<\alpha, P(\beta) \implies P(\alpha)$.Atunci $\forall \alpha$ ordinal avem $P(\alpha)$.
+
+\textbf{Pp. induc\c tiei (pp I de induc\c tie) pe ordinali:} Fie $P$ o proprietate \c si pp. c\u a:
+\begin{itemize}
+    \item $P(0)$
+    \item $\forall \alpha$ ordinal cu $P(\alpha)$, avem $P(\alpha^+)$
+    \item $\forall \alpha$ ordinal limit\u a a. \^ i. $\forall \beta<\alpha, P(\beta) \implies P(\alpha)$
+\end{itemize}
+Atunci $\forall \alpha$ ordinal avem $P(\alpha)$.
+
+\textbf{Th. recursiei complete pe ordinali:} Fie $G$ o opera\c tie. Atunci $\forall \alpha$ ordinal, $\exists! y$ a. \^ i. $\exists t$ grafic ce are dom. $\alpha^+$ a.\^ i. $\forall \beta<\alpha, t(\beta)=G(t_{|\beta})$ \c si $t(\alpha)$.
+
+\textbf{Lem\u a:} Fie $G$ o opera\c tie. Fie $\beta,\delta$ ordinali \c si $t,u$ grafice cu dom. $\beta$, resp. $\delta$ a. \^i. $\forall \gamma <\beta,\delta \implies t(\gamma)=G(t_{|\gamma})$ \c si $u(\gamma)=G(u_{|\gamma})$.\\
+Atunci, $\forall \gamma <\beta,\delta$ avem $t_{|\gamma}=u_{|\gamma}$ \c si $t(\gamma)=u(\gamma)$.
+
+\textbf{Th. recursiei pe ordinali:} Fie $G_1,G_2,G_3$ opera\c tii. Atunci $\forall \alpha$ ordinal $\exists ! y$ a.\^ i. $\exists ! t$ grafic cu dom. $\alpha^+$ a. \^ i. $\forall \beta \leq \alpha$:
+\begin{itemize}
+    \item dc. $\beta=0\implies t(\beta)=G_1(0)$
+    \item dc. $\exists \delta $ cu $\beta=\delta^+ \implies t(\beta)=G_2(t(\delta))$
+    \item dc. $\beta$ este limit\u a $t(\beta)=G_3(t_{|\beta}), y=t(\alpha) $
+\end{itemize}
+
+\textbf{Def:} Definim \textbf{adunarea ordinalilior}:
+\begin{itemize}
+    \item $\alpha+0:=\alpha$
+    \item $\alpha+\beta^+:=(\alpha+\beta)^+$
+    \item dc $\beta$ este ordinal limit\u a, $\alpha+\beta:=\sup\{\alpha+\gamma|\gamma<\beta\}$
+\end{itemize}
+
+\subsection{Opera\c tii cu ordinali}
+
+\textbf{Obs:} Adunarea nu este neap\u arat comutativ\u a: $1+\mathbb N=\mathbb N$ \c si $\mathbb N+1=\mathbb N\cup \{\mathbb N\}$.
+
+\textbf{Def:} Definim \textbf{\^ inmul\c tirea \c si exponen\c tierea}:
+\begin{itemize}
+    \item $\alpha \cdot 0:=0$
+    \item $\alpha \cdot \beta^+:=(\alpha\cdot\beta)+\alpha$
+    \item dc. $\beta$ ordinal limit\u a, $\alpha\cdot\beta:=\sup\{\alpha\cdot\gamma|\gamma<\beta\}$
+    \item $\alpha^0:=1$
+    \item $\alpha^{\beta^+}:=\alpha^\beta\cdot\alpha$
+    \item dc. $\beta$ ordinal limit\u a, $\alpha^\beta:=\sup\{\alpha^\gamma|\gamma<\beta\}$
+\end{itemize}
+
+\textbf{Nota\c tii:} Punem:
+\begin{itemize}
+    \item $\omega_1:=\omega$
+    \item $\omega_{n^+}:=\omega^(\omega_n)$
+    \item $\epsilon_0:=\sup\{\omega_n|n\geq 1\}$
+\end{itemize}
+
+\textbf{Def:} U ordinal s.n. \textbf{ini\c tial} dc. nu este echipotent cu un ordnal mai mic ca el.
+
+\textbf{Teorem\u a:} Pt. orice m\c t. bine-ordonat\u a exist\u a \c si este unic un ordinal ini\c tial echipotent cu ea. Acest ordinal se va numi \textbf{cardinal}.
+
+\subsection{Ordinali Hartogs}
+
+\textbf{Prop-def:} $\forall A$ m\c t. $\exists \alpha$ ordinal a .\^ i. u este echipotent cu nicio submul\c time a lui $A$. Deci exist\u a un ordinal minim cu aceast\u a prop, care este ini\c tial. Acesta s. n. \textbf{ordinalul Hartogs} al lui $A$ \c si \^ il not\u am cu \textbf{$h(A)$}.
+
+\textbf{Def:} Definim alef-uri pt. $\alpha$ ordinal:
+\begin{itemize}
+    \item $\aleph_{\alpha^+}:=h(\aleph_\alpha)$
+    \item dc. $\alpha$ este ordinal limit\u a $\aleph_\alpha:=\sup\{\aleph_\beta|\beta<\alpha\}$
+\end{itemize}
+
+\textbf{Prop:} $\forall \alpha$ ordinal avem c\u a $\alpha<\aleph_\alpha$ \c si $\aleph_\alpha$ este ordinal ini\c tial infinit.
+
+\textbf{Prop:} Dc. $\beta<\aleph_\gamma$ ordinal ini\c tial infinit $\implies \exists \alpha<\gamma$ ordinal cu $\beta=\aleph_\alpha$.
+
+\section{Curs 5}
+
+\subsection{Axioma alegerii}
+
+\textbf{Prop(Axioma alegerii):} UASE:
+\begin{itemize}
+    \item $\forall S$ cu $\emptyset \notin S, \exists (g_y)_{y\in S}$ a.\^ i. $\forall y\in S \implies g_y\in y$
+    \item $\forall I$ \c si orice fam. de mul\c timi nevide index. dup\u a $i, (F_i)_{i\in I}$, avem c\u a $\prod_{i\in I}F_i \neq \emptyset$.
+    \item $\forall I$ \c si orice fam. de mul\c timi nevide, disjuncte 2 c\^ ate 2 index. dup\u a $i, (D_i)_{i\in I}$, avem c\u a $\prod_{i\in I}D_i \neq \emptyset$.
+\end{itemize}
+
+\subsection{Lema lui Zorn}
+
+\textbf{Def:} Fie $(A,\leq)$ o m\c t. ordonat\u a \c si $B\subseteq A$. $B$ s.n. \textbf{lan\c t} al lui $A$ dc. $\forall x,y\in B$, avem $x\leq y$ sau $y\leq x$.
+
+\textbf{Def:} O m\c t. $(A,\leq)$ s.n. \textbf{inductiv ordonat\u a} dc. orice lan\c t al s\u au admite un majorant.
+
+\textbf{Lema lui Zorn:} Orice m\c t. inductiv ordonat\u a admite un element maximal.
+
+\textbf{Teorema bunei ordon\u ari(Zermelo):} Orice m\c t. este bine ord.
+
+\textbf{Obs:} Axioma alegerii, Lema lui Zorn \c si Teorema bunei ord sunt echivalente.
+
+\textbf{Teorem\u a(Axioma alegerii dependente):} Fie $X\neq \emptyset$ \c si $R\subseteq X\times X$ a.\^ i. $\forall x\in X, \exists Y\in X$ cu $(x,y)\in R$. Atunci $\exists (x_n)$ \c sir cu $(x_n,x_{n+1})\in R$.
+
+\subsection{Cardinali}
+
+\textbf{Prop:} $\forall \alpha$ card infinit $\implies \alpha\cdot\alpha=\alpha$.
+
+\textbf{Prop:} Fie $X$ infinit\u a. Atunci exist\u a $Y\subset X, Y\neq X$ cu $X\sim Y$.
+
+\textbf{Prop:}Dc. $P_n(X):=\{A\in P(x)||A|=n \in \mathbb N-\{0\}\}$ atunci $|P_n(X)|=|x|$.
+
+\subsection{Spa\c tii vectoriale}
+
+\textbf{Prop:} Fie $K$ un corp \c si $V$ un $K$-spa\c tiu vect. \c si $\mathbb B\neq \emptyset$ baz\u a pt. $V$. Atunci $\max\{|\mathbb B|,|K|\}\leq |V|$.
+
+\textbf{Prop:}  Fie $K$ un corp infinit \c si $V$ un $K$-spa\c tiu vect. \c si $\mathbb B\neq \emptyset$ baz\u a finit\u a pt. $V$. Atunci $|K| = |V|$. Dc. $\mathbb B$ infinit\u a atunci $\max\{|\mathbb B|,|K|\}= |V|$.
+
+\textbf{Prop:} Fie $\mathbb B$ o baz\u a pt. $\mathbb Q^\mathbb N$. Atunci $|\mathbb B|=c$.
+
+\section{Curs 6}
+
+\textbf{Axioma regularit\u a\c tii:} Pentru orice m\c t. nevid\u a $a,\exists b\in a$ cu $b\cap a=\emptyset$.
+
+\textbf{Consecin\c te:}
+\begin{itemize}
+    \item Nu exist\u a $x$ cu $x\in x$.
+    \item Nu exist\u a $x,y$ cu $x\in y\in x$
+    \item Nu exist\u a $x,y,z$ cu $x\in y\in z\in x$
+    \item Nu exist\u a $n\in \mathbb N$ \c si $(x_i)_{i<n^+}$ a.\^ i. $x_0\in x_n$ \c si, pt. orice $i<n$, avem $x_{i^+}\in x_i$
+    \item \textbf{Pp \c sirului:} Nu exist\u a $(x_i)_{i\in \mathbb N}$ a.\^ i. $\forall i\in \mathbb N$ s\u a avem $x_{i^+}\in x_i $.
+\end{itemize}
+
+\textbf{Prop:} Pp. \c sirului implic\u a Axioma regularit\u a\c tii.
+
+\textbf{Def:} Definim un \c sir de m\c t. indexat dup\u a ordinali, care s.n. \textbf{ierarhia von Neumann}: $V_0:=\emptyset, \forall \beta$ ordinal, punem $V_{\beta^+}:=P(V_\beta)$ \c si pt. orice ord. lim, punem $V_\alpha:=\bigcup\{V_\gamma|\gamma<\alpha\}=\bigcup_{\gamma<\alpha}V_\gamma$.
+
+\subsection{Rangul}
+
+\textbf{Def:} Fie $x$ m\c t. a.\^ i. $\exists \alpha$ minim cu $x\in V_\alpha \implies \exists \beta$ cu $\alpha=\beta^+$. Atunci $\beta$ s.n. \textbf{rangul lui $x$} \c si \^ il not\u am cu \textbf{rg($x$)}.
+
+\textbf{Prop:} Fie $\alpha$ un ordinal, $x\in v_\alpha,y\in x \implies \exists \delta<\alpha$ cu $y\in V_\delta$.
+
+\textbf{Prop:} Fie $\alpha$ un ordinal. Atunci:
+\begin{itemize}
+    \item Dc. $\gamma<\alpha \implies v_\gamma\subseteq V_\alpha$
+    \item Avem c\u a $V_\alpha$ e tranzitiv\u a.
+\end{itemize}
+
+\textbf{Prop:} Fie $x$ o m\c t. ale c\u arei elem. au toate rang. Atunci $x$ are rang.
+
+\textbf{Def:} Pt. o m\c t. $X$, definim $T_0(X):=X$ \c si apoi, recursiv, $\forall n\in \mathbb N, T_{n^+}(X):=\bigcup_{n\in \mathbb N}T_n(X)$. Atunci $T(X)$ s.n. \textbf{\^ inchiderea tranzitiv\u a a lui $X$}.
+
+\textbf{Obs:} $T(X)$ este tranzitiv\u a \c si $\forall Y, X\subseteq Y \implies T(X)\subseteq X$.
+
+\textbf{Prop (Pp rangului):} Orice m\c t. are rang.
+
+\textbf{Axioma induc\c tiei:} Pentru orice proprietate $P$ a.\^ i. $\forall x$, avem c\u a dc. $\forall y\in x$ avem $P(y) \implies P(x)$, atunci este adev\u arat c\u a $\forall x, P(x)$.
+
+\textbf{Prop:} Axioma induc\c tiei este echiv cu Pp. rangului.
+
+\textbf{Prop-def:} Fie $G\subseteq P(I).$ UASE:
+\begin{itemize}
+    \item $\forall S_1,S_2\in G \implies S_1\cup S_2\in G$
+    \item $\forall A\subseteq G$ finit\u a nevid\u a, $\bigcap A\in G$.
+\end{itemize}
+\^ In acest caz spunem c\u a $G$ este \textbf{\^ inchis\u a la intersec\c tii finite}.
+
+\subsection{Filtre}
+
+\textbf{Def:} S.n.\textbf{filtru pe $I$} o submul\c time $F$ a lui $P(I)$ a. \^ i.:
+\begin{itemize}
+    \item $\emptyset\notin F$
+    \item $I\in F$
+    \item $F$ \^ inchis\u a la intersec\c tii finite
+    \item $\forall S_1,S_2\subseteq I$ cu $S_1\in F, S_1\subseteq S_2 \implies S_2 \in F$.
+\end{itemize}
+
+\textbf{Def:} Fie $G\subseteq P(I)$
+\begin{itemize}
+    \item Spunem c\u a $G$ are \textbf{proprietatea slab\u a a intersec\c tiilor finite} dc. $\forall A\subseteq G$ finit\u a nevid\u a, $\bigcap A\neq \emptyset$
+    \item Spunem c\u a $G$ are \textbf{prop. tare a intersec\c tiilor finite} dc. $\emptyset \notin G$, iar $G$ este \^ inchis\u a la intersec\c tii finite.
+\end{itemize}
+
+\textbf{Obs:} Orice filtru posed\u a prop. tare a intersec\c tiilor finite.
+
+\textbf{Prop-def:} Fie $G\subseteq P(I)$ care are prop intersec\c tiilor finite. Dc $G\neq \emptyset\implies \{S\in P(I)|\exists A\subseteq G \text{ finit\u a cu } \bigcap A\subseteq S \}$ este filtru care include $G$ \c si s.n. \textbf{filtru generat de G}.
+
+\textbf{Obs:} Dc. $G=\emptyset$ spunem c\u a filtrul generat de $G$ este $\{I\}$.
+
+\textbf{Def:} Filtrul generat de $\{T\}$ se noteaz\u a cu $[T)$ \c si s.n. \textbf{filtru principal}.
+
+\textbf{Corolar:} Fie $G\subseteq P(I)$. UASE:
+\begin{itemize}
+    \item $G$ are prop. intersec\c tiilor finite.
+    \item Exist\u a un filtru pe $I$ care include pe $G$.
+\end{itemize}
+
+\subsection{Ultrafiltre}
+
+\textbf{Prop-def:} Fie $U$ un filtru pe $I$. UASE:
+\begin{itemize}
+    \item $\forall F$ filtru cu $U\subseteq F \implies U=F$
+    \item $\forall S_1,S_2\subseteq I$ cu $S_1\cap S_2\in U$, avem, $S_1\in U$ sau $S_2\in U$
+    \item $\forall S\subseteq I$ avem exact una dintre $S\in U$ sau $I-S\in U$.
+\end{itemize}
+\^ In acest caz $U$ s.n. \textbf{ultrafiltru}.
+
+\textbf{Prop:} Fie $U\subseteq P(I)$. Atunci $U$ este ultrafiltru $\iff \chi_U:P(I)\in 2$ satisface urm prop, care o fac s\u a fie \textbf{probabilitate finit aditiv\u a}:
+\begin{itemize}
+    \item $\chi_U(\emptyset)=0$
+    \item $\chi_U(I)=1$
+    \item $\forall n\in \mathbb N, \forall (A_i)_{i<n}$ familie de submul\c timi ale lui $I$ a.\^ i. $\forall i,j<n$ cu $i\neq j, A_i\cap A_j=\emptyset$  avem: $\chi_U(\bigcup_{i<n}A_i)=\sum_{i<n} \chi_U(A_i)$.
+\end{itemize}
+
+\textbf{Prop (Galvin \c si Horn, 1970):} Fie $U\subseteq P(I)$. Atunci $U$ este un ultrafiltru $\iff \forall (A_i)_{i<3}$ fam. de submul\c timi ale lui $I$ a.\^ i. $\forall i\neq j<3, A_i\cap A_j]\emptyset, A_0\cup A_1\cup A_2=I$ avem c\u a $\exists ! i<3$ cu $A_i\in U$.
+
+\textbf{Teorema de existen\c t\u a a ultrafiltrului} Fie $F$ un filtru. Atunci $\exists U$ ultrafiltru cu $F\subseteq U$.
+
+\textbf{Corolar:} Fie $G\subseteq P(I)$. UASE:
+\begin{itemize}
+    \item $G$ are prop. intersec\c tiilor finite
+    \item $\exists$ un filtru pe $I$ care include $G$
+    \item $\exists$ un ultrafiltru pe $I$ care include $G$
+\end{itemize}
+
+\textbf{Obs:} Orice ultrafiltru principal pe $I$ este de forma $[\{x\}), x\in I$.
+
+\textbf{Def:} Fie $I$ infinit\u a. Atunci m\c t. $\{T\subseteq I|I-T \text{ este finit\u a}\}$ este foltru pe $I$ \c si s.n. \textbf{filtru Fr\' echet pe $I$}.
+
+\section{Curs 7}
+
+\subsection{Logic\u a propozi\c tional\u a}
+
+\textbf{Nota\c tii:}
+\begin{itemize}
+    \item \textbf{$\perp$}:=0
+    \item \textbf{$\top$}:=1
+    \item \textbf{$\neg p$} = non p
+\end{itemize}
+
+\textbf{Prop:} Fie $p,q\in 2$. Atunci:
+\begin{itemize}
+    \item $\neg p= (p\rightarrow\perp),\top=\neg \perp=(\perp \rightarrow\perp)$
+    \item $p\land q=\neg(p\rightarrow\neg q)$
+\end{itemize}
+
+\textbf{Nota\c tie:} 
+\begin{itemize}
+    \item $S(Q)=Q\cup\{\perp,\rightarrow\}$, unde $Q$ = m\c t. tuturor variabilelor/simbolurilor propozi\c tionale.
+    \item $k:=|Q|$ \c si $f:k\rightarrow Q$ bij.
+    \item $\forall \alpha\in k, f(\alpha):=v_\alpha$
+\end{itemize}
+
+\subsection{Formule}
+
+\textbf{Def:} \textbf{Formulele} vor fi elem. ale lui $\text{Seq}_\text{fin}(S(Q))$, iar prop. pe care $A\subseteq \text{Seq}_\text{fin}(S(Q))$ trebuie s\u a le verifice ca s\u a fie \textbf{m\c t. de formule} vor fi:
+\begin{itemize}
+    \item $\text{Seq}_1(Q)\subseteq A$ (variab. sunt formule)
+    \item $\langle \perp \rangle \in A$
+    \item dc. $\phi,\psi \in A \rightarrow \phi\psi\in A$.
+\end{itemize}
+Minimul ei se noteaz\u a cu \textbf{$E(Q)$}, iar elem. ei s.n. \textbf{formule/enun\c turi} peste $Q$.
+
+\textbf{Obs:} \^ In general scriem $\phi\psi$ \^ in loc de $\phi \rightarrow \psi$.
+
+\textbf{Nota\c tii:}
+\begin{itemize}
+    \item Dc. $\Sigma$= alfabet, atunci $\text{Seq}_\text{fin}(\Sigma)$ = \textbf{M\c t. cuvintelor}
+    \item dc. $a,b \in \text{Seq}_\text{fin}(\Sigma)$ not\u am cu $ab=\{(0,a),(1,b)$ \c sir
+    \item \textbf{lungimea} unui cuv = dom. s\u au
+    \item O submul\c time a lui $\text{Seq}_\text{fin}(\Sigma)$ s.n. \textbf{limbaj formal}.
+\end{itemize}
+
+\textbf{Pp. induc\c tiei pe formule:} Fie $B\subseteq E(Q)$ a.\^ i.:
+\begin{itemize}
+    \item $\text{Seq}_1(Q)\subseteq B$
+    \item $\langle \perp\rangle \in B$
+    \item dc. $\phi,\psi \in B\implies\phi\psi\in B$
+\end{itemize}
+Atunci $B=E(Q)$.
+
+\textbf{Prop. de citire:} Fie $\chi\in E(Q).$ Atunci se \^ int\^ ampl\u a exact una dintre urm. alternative:
+\begin{itemize}
+    \item $\chi \in \text{Seq}_1(Q)$
+    \item  $\chi=\langle\perp\rangle$
+    \item $\exists \phi,\psi \in E(Q)$ cu $\chi=\rightarrow \phi\psi$.
+\end{itemize}
+
+\textbf{Lem\u a:} Fie $\chi\in E(Q)$. Atunci nu exist\u a $\alpha\in E(Q)$ care s\u a fie segment ini\c tial strict pe $\chi$.
+
+\textbf{Prop. de citire unic\u a a formulelor:} Fie $\phi,\psi,\phi',\psi'\in E(Q)$ cu $\rightarrow \phi\psi=\rightarrow\phi,\psi,$. Atunci $\phi=\phi',\psi=\psi'$.
+
+\subsection{Opera\c tii pe $E(Q)$}
+
+\textbf{Def:} Definim:
+\begin{itemize}
+    \item $\phi\rightarrow\psi:=\rightarrow \phi\psi$
+    \item $\top$:=$\perp\rightarrow\perp$
+    \item $\neg\phi:=\phi\rightarrow\perp$
+    \item $\phi\land\psi:=\neg(\phi\rightarrow\neg\psi)$
+    \item $\phi\lor\psi:=(\neg\phi)\rightarrow\psi$
+    \item $\phi\leftrightarrow \psi:=(\phi\rightarrow\psi)\land(\psi\rightarrow\phi)$.
+\end{itemize}
+
+\textbf{Pp. recursiei pe formule:} Fie $A$ o m\c t. \c si $G_0:Q\rightarrow A,G_\perp\in A,G_\rightarrow:A^2\rightarrow A$. Atunci $\exists! F:E(Q)\in A$ cu:
+\begin{itemize}
+    \item $\forall v\in Q, F(v)=G_0(v)$
+    \item $F(\perp)=G_\perp$
+    \item $\forall \phi,\psi \in E(Q), F(\phi\rightarrow\psi)=G_\rightarrow(F(\phi),F(\psi))$.
+\end{itemize}
+
+\subsection{Mul\c timea variabilelor}
+
+\textbf{Corolar:} $\exists! Var:E(Q)\rightarrow P(Q)$ cu
+\begin{itemize}
+    \item $\forall v\in Q, Var(v)=\{v\}$
+    \item $Var(\perp)=\emptyset$
+    \item $\forall\phi,\psi \in E(Q), Var(\phi\rightarrow\psi)=Var(\phi)\cup Var(\psi)$.
+\end{itemize}
+
+\textbf{Corolar:} $\forall\phi\in E(Q), Var(\phi)$ este finit\u a.
+
+\subsection{Evaluarea formulelor:} Fie $e:Q\rightarrow 2$. Atunci $\exists! e^+:E(Q)\rightarrow 2$ a.\^ i.:
+\begin{itemize}
+    \item $\forall v\in Q, e^+(v)=e(v)$
+    \item $e^+(\perp)=\perp=0$
+    \item $\forall \phi,\psi\in E(Q),e^+(\phi\rightarrow\psi)=e^+(\phi)\rightarrow e^+(\psi)$.
+\end{itemize}
+
+\textbf{Corolar:} Fie $e:Q\rightarrow 2,\phi,\psi\in E(Q)$. Atunci:
+\begin{itemize}
+    \item $e^+(\neg\phi)=\neg e^+(\phi)$
+    \item $e^+(\phi\land\psi)=e^+(\phi)\land e^+(\psi)$
+    \item $e^+(\phi\lor\psi)=e^+(\phi)\lor e^+(\psi)$
+    \item $e^+(\phi\leftrightarrow\psi)=e^+(\phi)\leftrightarrow e^+(\psi)$.
+\end{itemize}
+
+\subsection{Tautologii}
+
+\textbf{Def:} Fie $\phi,\psi\in E(Q)$
+\begin{itemize}
+    \item Fie $e:Q\rightarrow 2$. Sunem c\u a \textbf{$e$ satisface/e model pt. $\phi$} \c si not\u am cu $e\models \phi$ dc. $e^+(\phi)=1$.M\c t. modelelor unei formule $\phi$ se noteaz\u a cu $Mod(\phi)$.
+    \item Spunem c\u a $\phi$ e \textbf{tautologie} \c si scrie $\models\phi$ dc. $\forall e, e\models\phi$. Adic\u a $Mod(\phi)=2^Q$.
+    \item Spunem c\u a $\phi$e \textbf{satisfiabil\u a} dc. $\exists e$ cu $e\models \phi$.
+    \item Spunem c\u a $\phi$e \textbf{nesatisfiabil\u a} dc. $\forall e$ $\phi$ e nesatsif\u acubil\u a.
+    \item Spunem c\u a \textbf{din $\phi$ se deduce semantic $\psi$} \c si scriem $\phi\models\psi$ dc. $\forall e$ cu $e\models\phi$ avem $e\models\psi$.
+\end{itemize}
+
+\textbf{Prop:} Fie $\phi\in E(Q)$. Atunci:
+\begin{itemize}
+    \item $\phi$ e tautologie $\iff \neg\phi$ e nesatisfiabi\u a
+    \item $\phi$ e nesatisfiabil\u a $\iff \neg\phi$ e tautologie.
+\end{itemize}
+
+\textbf{Prop:} Fie $\phi,\psi\in E(Q)$. Atunci $\phi\models\psi \iff \models\phi\rightarrow\psi$.
+
+\subsection{Mul\c timi diferite de variabile}
+
+\textbf{Prop:} Fie $Q'\subseteq Q$, deci $E(Q')\subseteq E(Q)$. Fie $f\in 2^Q,e:=f_{|Q'}$. Atunci $\forall \phi\in E(Q'),e^+(\phi)=f^+(\phi)$.
+
+\textbf{Corolar:} Fie $e_1,e_2\in 2^Q,\phi\in E(Q)$. Pp c\u a $\forall v\in Var(\phi),e_1(v)=e_2(v)$. Atunci $e_1(\phi)=e_2(\phi)$.
+
+\textbf{Def:} O \textbf{func\c tie boolean\u a pe $I$} este o func\c tie de la $2^I$ la 2.
+
+\textbf{Corolar:} Dc. $Q$ e finit\u a, $|E(Q)/\sim|=2^{2^{|Q|}}$. 
+
+\textbf{Prop:} Fie $A$ infinit\u a. Atunci $|\text{Seq}_\text{fin}(A)|=|A|$.
+
+\textbf{Prop:} Dc. $Q$ infinit\u a, atunci $|E(Q)|=|Q|$.
+
+\section{Curs 8}
+
+\subsection{Mul\c timi de formule}
+
+\textbf{Lem\u a:} Fie $\Gamma \in E(Q),\Delta\subseteq \Gamma,e\in Mod(\Gamma).$ Atunci $e\in Mod(\Delta)$, unde $Mod(\Gamma)$ este m\c t. de $e$ cu $e\models\phi,\forall\phi\in\Gamma $.
+
+\textbf{Lem\u a:} Fie $\Gamma\subseteq E(Q)$ \c si $e:Q\rightarrow 2$. Atunci $e\models\Gamma \iff [\forall \Delta\subseteq\Gamma\text{finit\u a}, e\models\Delta]$.
+
+\subsection{Deduc\c tie semantic\u a pe mul\c timi}
+
+\textbf{Def:} Fie $\Gamma\subseteq  E(Q),\phi\in E(Q)$. Spunem c\u a $\Gamma$ \textbf{se deduce semantic din $\phi$} \c si scriem $\Gamma\models\phi$ dc. $\forall e$ cu $e\models\Gamma$ avem $e\models\phi$.
+
+\textbf{Lem\u a:} Fie $\Gamma\subseteq  E(Q),\Delta\subseteq\Gamma,\phi\in E(Q)$ cu $\Delta\models\phi$. Atunci $\Gamma\models \phi.$
+
+\textbf{Lem\u a:} Fie $\Gamma\subseteq E(Q).$ Atunci $\Gamma$ este nesatisfiabil\u a $\iff G
+\models\perp$.
+
+\textbf{Lem\u a:} Fie $\Gamma\subseteq  E(Q),\phi\in E(Q)$. Atunci $\Gamma\models\phi\iff\\G
+\cup\{\neg\phi\}$ este nesatisfiabil\u a.
+
+\textbf{Pro:} Fie $\Gamma\subseteq  E(Q),\phi,\psi\in E(Q)$. Atunci $\Gamma\cup\{\phi\}\models\psi\iff\Gamma\models\phi\rightarrow\psi$.
+
+\subsection{Teorema de compacitate}
+
+\textbf{Th. de compacitate - TK1:} Fie $\Gamma\subseteq  E(Q),\phi\in E(Q)$. Atunci $\Gamma\models\phi\iff\exists\Delta\subseteq\Gamma$ finit\u a cu $\Delta\models\phi$.
+
+\textbf{Th. de compacitate - TK2:} O m\c t. de formule este satisfiabil\u a $\iff$ este finit satisfiabil\u a.
+
+\textbf{Def:} Fie $I\neq\emptyset,e=(e_i)_{i\in I}$ o fam. de evalu\u ari (elem. ale lui $2^Q$ \c si $U$ un ultrafiltru pe $I$. Numim \textbf{ultraprodusul lui $e$ relativ la $U$} func\c tia $e^U:Q\rightarrow2,e^U(x)=1:\iff\{i\in I|e_i(x)=1\}\in U$.
+
+\textbf{Th. fundam. a ultraproduselor:} Fie $I\neq\emptyset,e=(e_i)_{i\in I}$ o fam. de evalu\u ari (elem. ale lui $2^Q$ \c si $U$ un ultrafiltru pe $I$.Atunci $\forall\chi\in E(q),e^U\models\chi\iff\{i\in I|e_i\models \chi\}\in U.$
+
+\textbf{Th. fundam. a ultraproduselor - var 2:} Fie $I\neq\emptyset,e=(e_i)_{i\in I}$ o fam. de evalu\u ari (elem. ale lui $2^Q$ \c si $U$ un ultrafiltru pe $I$. Atunci, $\forall\Delta\subseteq E(Q)$ finit\u a $e^U\models\Delta\iff\{i\in I|e_i\models\Delta\}\in U$.
+
+\subsection{Grafuri}
+
+\textbf{Def:}
+\begin{itemize}
+    \item Numim \textbf{graf neorientat} o pereche $(A,R)$ cu $R$ rel. sim+ireflexiv\u a pe $A$.
+    \item $k\in\mathbb N$. O \textbf{$k-$colorare pe un graf} este o func\c tie $f:A\rightarrow k$ cu $\forall x,y\in A$ cu $xRy$, avem $f(x)\neq f(y)$.
+    \item Dc. exist\u a o $k-$colorare, atunci raful este \textbf{$k-$colorabil}.
+\end{itemize}
+
+\textbf{Teorem\u a:} Un graf este $k-$colorabil $\iff \forall$ subgraf finit al s\u au este $k-$colorabil.
+
+\subsection{Spa\c tii topologice}
+
+\textbf{Def:} Un \textbf{spa\c tiu topologic} este o pereche $(X,\tau)$ unde $\tau\subseteq P(X)$ \c si:
+\begin{itemize}
+    \item $\emptyset,X\in \tau$
+    \item $\forall A,B\in\tau,A\cap B\in \tau$
+    \item $\forall(A_i)_{i\in I}\in\tau,\bigcup_{i\in I}A_i\in\tau$.
+\end{itemize}
+Elem. lui $\tau$ s.n. \textbf{deschi\c sii spa\c tiului}. $A\subseteq X$ cu $X-A\in \tau$ s.n. \textbf{\^ inchi\c sii spa\c tiului}.
+
+\textbf{Def:} Un \textbf{spa\c tiu topologic def. prin \^ inchi\c si} este o pereche $(X,\tau)$ unde $\tau\subseteq P(X)$ \c si:
+\begin{itemize}
+    \item $\emptyset,X\in \tau$
+    \item $\forall A,B\in\tau,A\cup B\in \tau$
+    \item $\forall(A_i)_{i\in I}\in\tau,\bigcap_{i\in I}A_i\in\tau$.
+\end{itemize}
+
+\textbf{Spa\c tii asociate logicii prop:} Iau $\rho\subseteq P(2^Q)$ m\c t. tuturor m\c t. de forma $Mod(\Gamma)$ cu $\Gamma\subseteq E(Q)$. Atunci $(2^Q,\rho)$ este sp. top. def. prin \^ inchi\c si.
+
+\textbf{Def:} $(X,\tau)$ este un \textbf{sp. top. compact} dc. $\forall (A_i)_{i\in I}$ fam. de deschi\c si cu $\bigcup_{i\in I}A_i=X$, avem c\u a exist\u a $J\subseteq I$ finit\u a cu $\bigcup_{i\in J}A_i=X$.
+
+\textbf{Def:} $(X,\tau)$ este un \textbf{sp. top. compact} dc. $\forall (A_i)_{i\in I}$ fam. de \^ inchi\c si cu $\forall J\subseteq I$ finit\u a cu $\bigcap_{i\in J}A_i\neq\emptyset$, avem c\u a  $\bigcap_{i\in I}A_i\neq \emptyset$.
+
+\textbf{th. de compacitate - TK3:} Sp.top def. rin \^ inchi\c si $(2^Q,\rho)$ este compact.
+
+\section{Curs 9}
+
+\subsection{Deduc\c tie sintactic\u a}
+
+\textbf{Def:} Fie $\Gamma\subseteq E(Q)$. Definim \textbf{m\c t. consecin\c telor sintactice ale lui $\Gamma$} ca fiind acea submul\c time $A$ a lui $E(Q)$ care verific\u a urm. prop:
+\begin{itemize}
+    \item $\Gamma\subseteq A$
+    \item $\forall\phi,\psi,\chi\in E(Q)$, avem:\\
+    \textbf{A1:} $\phi\rightarrow(\psi\rightarrow\phi)\in A$\\
+    \textbf{A2:} $((\phi\rightarrow(\psi\rightarrow\chi))\rightarrow((\phi\rightarrow\psi)\rightarrow\chi))\in A$\\
+    \textbf{A3:} $\neg\neg\phi\rightarrow\phi\in A$
+    \item \textbf{MP:} $\forall\phi,\psi\in E(Q)$ cu $\phi,\phi\rightarrow\psi\in A$ avem $\psi\in A$.
+\end{itemize}
+Aceast\u a m\c t. se oteaz\u a cu $Thm(\Gamma)$ \c si $\forall\phi\in E(Q)$ spunem c\u a \textbf{$\Gamma$ se deduce sintactic din $\phi$} \c si scriem $\Gamma\vdash\phi$ dc. $\pi\in Thm(\Gamma)$. cea mai mica m\c t. care verif. rel. s.n. \textbf{m\c t. teoremelor formale} \c si se noteaz\u a cu $Thm$.
+
+\textbf{Pp. induc\c tiei pe deduc\c tia semnatic\u a:} Fie $\Gamma,B\subseteq E(Q)$ a. \^ i.:
+\begin{itemize}
+    \item $\Gamma\subseteq B$
+    \item $\forall\phi,\psi,\chi\in E(Q)$, avem:\\
+    \textbf{A1:} $\phi\rightarrow(\psi\rightarrow\phi)\in B$\\
+    \textbf{A2:} $((\phi\rightarrow(\psi\rightarrow\chi))\rightarrow((\phi\rightarrow\psi)\rightarrow(\phi\rightarrow\chi))\in B$\\
+    \textbf{A3:} $\neg\neg\phi\rightarrow\phi\in A$
+    \item \textbf{MP:} $\forall\phi,\psi\in E(Q)$ cu $\phi,\phi\rightarrow\psi\in B$ avem $\psi\in B$.
+\end{itemize}
+Atunci $Thm(\Gamma)\subseteq B$.
+
+\textbf{Corolar:} Fie $\Gamma,\Delta\subseteq E(Q)$ cu $\Gamma\subseteq\Delta$. Atunci $Thm(\Gamma)\subseteq Thm(\Delta)$.
+
+\textbf{Corolar:} Fie $\Gamma\subseteq E(Q)$. Atunci $Thm\subseteq Thm(\Gamma)$.
+
+\textbf{Prop:} $\forall\phi\in E(Q)$, avem $\vdash\phi\rightarrow\phi$.
+
+\textbf{Th. deduc\c tiei sintactice:} $\forall \Gamma\subseteq E(Q),\phi,\psi\in E(Q)$ avem c\u a $\Gamma\vdash\phi\rightarrow\psi\iff\Gamma\cup\{\phi\}\vdash\psi$.
+
+\textbf{Prop:} $\forall \pi,\psi,\chi\in E(Q)$ avem $\vdash(\phi\rightarrow\psi)\rightarrow((\psi\rightarrow\chi)\rightarrow(\phi\rightarrow\chi))$.
+
+\textbf{Prop:} $\forall\Gamma\subseteq E(Q),\phi,\psi,\chi\in E(Q)$ cu $\Gamma\vdash\phi\rightarrow\psi$ \c si $\Gamma\vdash\psi\rightarrow\chi$, avem $\Gamma\vdash\phi\chi$.
+
+\subsection{Metoda reducerii la absurd}
+
+\textbf{Prop:} $\forall \Gamma\subseteq E(Q),\phi\in E(Q)$ cu $\Gamma\cup\{\neg\phi\}\vdash\perp$, avem $\Gamma\vdash\phi$.
+
+\textbf{Prop:} Fie $\phi,\psi \in E(Q)$. Atunci avem:
+\begin{itemize}
+    \item $\vdash\psi\rightarrow(\neg\phi\rightarrow\neg(\psi\rightarrow\phi))$
+    \item $\vdash (\psi\rightarrow\phi)\rightarrow(\neg\phi\rightarrow\neg\psi)$
+    \item $\vdash\neg\psi\rightarrow(\psi\rightarrow\phi)$
+    \item $\vdash(\neg\phi\rightarrow\phi)\rightarrow\phi$.
+\end{itemize}
+
+\textbf{Prop:} $\forall \Gamma\subseteq E(Q),\phi,\psi\in E(Q)$ cu $\Gamma\cup\{\psi\}\vdash\phi$ \c si $\Gamma\cup \{\neg\psi\}\vdash\phi$, avem $\Gamma\vdash\phi$.
+
+\subsection{Teorema de corectitudine}
+
+\textbf{Th. de corectitudine:} $\forall \Gamma\subseteq E(Q),\phi\in E(Q)$ cu $\Gamma\vdash\phi$, avem $\Gamma\models\phi$.
+
+\textbf{Corolar:} $\forall \phi\in E(Q)$ cu $\vdash\phi,$ avem $\models\phi$.
+
+\textbf{Def:} Spunem c\u a $\Gamma\subseteq E(Q)$ este \textbf{consistent\u a} dc. $\Gamma\nvdash \perp$ \c si inconsitent\u a altfel.
+
+\textbf{Th. de corectitudine -var2:} Orice m\c t. satisfiabil\u a este consisten\u a.
+
+\textbf{Nota\c tii:} $\forall v\in Q,e:Q\rightarrow 2$:
+\[ v^e = \left\{ \begin{array}{l l} v & \quad \text{pentru $e(v)=1$}\\ \neg v & \quad \text{pentru $e(v)=0$}\\ \end{array} \right. \]
+Not\u am $W^e:=\{v^e|v\in W\}$
+
+\textbf{Prop:} Fie $e:Q\rightarrow 2, \phi\in E(Q)$. Atunci:
+\begin{itemize}
+    \item dc. $e^+(\phi)=1$, atunci $Var(\phi)^e\vdash\phi$
+    \item dc. $e^+(\phi)=0$, atunci $Var(\phi)^e\vdash\neg\phi$
+\end{itemize}
+
+\subsection{Teorema de completitudine}
+
+\textbf{Th. de completitudine slab\u a:} $\forall\phi\in E(Q)$ cu $\models\phi$, avem $\vdash\phi$.
+
+\textbf{Th. de completitudine medie:} $\forall\Delta\subseteq E(Q)$ finit\u a \c si $\phi\in E(Q)$ cu $\Delta\models\phi$, avem $\Delta\vdash\phi$.
+
+\textbf{Th. de completitudine tare:} $\forall\Gamma\subseteq E(Q),\phi\in E(Q)$ cu $\Gamma\models\phi$, avem $\Gamma\vdash\phi$.
+
+\textbf{Th. de completitudine - var2:} Orice m\c t. consistent\u a este satisfiabil\u a.
+
+\textbf{Th. de completitudine - sumar}:
+\begin{itemize}
+    \item $\forall\Gamma\subseteq E(Q),\phi\in E(Q)$ avem $\Gamma\models\phi\iff \Gamma\vdash\phi$
+    \item O m\c t. este consistent\u a $\iff$ este satisfiabil\u a.
+\end{itemize}
+
+\section{Curs 10}
+
+\subsection{Logica de ordin I}
+
+\textbf{Def: Sinatura de ordinul I} este un triplet $\sigma=(F,R,r)$ unde $F\cap R=\emptyset, (F\cup R)\cap(V\cup \{\perp,\rightarrow,\forall,=\})=\emptyset,r:F\cup R\rightarrow\mathbb N$. Atunci elem lui $R$ s.n. \textbf{simboluri de rela\c tie} ale lui $\sigma$, elem. lui $F$ \textbf{simboluri de func\c tie} \c si $\forall s\in F\cup R$, $r(s)$ s.n. \textbf{aritatea} lui $s$. Dc. $r(s)=0$, $s$ s.n. \textbf{constantele lui $\sigma$}.
+
+$S_\sigma:=\{\perp,\rightarrow,\forall,=\}\cup V\cup F\cup R$
+
+\textbf{Def:} Dc. $\sigma=(F,R,r)$ este o signatur\u a de ord I, atunci o $\sigma-$\textbf{structur\u a} va fi o perecge $(A,\{A_s\}_{s\in F\cup R}$, unde $A\neq\emptyset$ \c si se va numi \textbf{universul/ m\c t. suport/subiacent\u a a structurii}.
+
+\textbf{Pp. induc\c tiei pe termeni:} Fie $B\subseteq T_\sigma$ a.\^ i.:
+\begin{itemize}
+    \item $V\subseteq b$
+    \item $\forall s\in F,\forall t_1,\cdots t_{r(s)}\in B$, avem $st_1\cdots t_{r(s)}\in B$.
+\end{itemize}
+Atunci $B=T_\sigma$.
+
+\textbf{Def:} Putem def. \textbf{m\c t. variabilelor unui termen} $Var:T_\sigma\rightarrow P(V)$ cu:
+\begin{itemize}
+    \item $\forall x\in V, Var(x):=\{x\}$
+    \item $\forall s\in F,t_1,\cdots t_{r(s)}\in T_\sigma, Var(st_1\cdots t_{r(s)}:=Var(t_1)\cup\cdots\cup Var(t_{r(s)})$.
+\end{itemize}
+
+\textbf{Lema variabilelor pt. termeni:} Fie $\mathbb A=(A,(A_s)_{s\in F\cup R})$ o $\sigma-$structura, $v_1,v_2:V\rightarrow A,t\in T_\sigma$ a.\^ i. $v_{|Var(t)}=v_{}2|Var(t)$. Atunci $t_{v_1}^{\mathbb A}=t_{v_2}^{\mathbb A}$.
+
+\subsection{Formule}
+
+\textbf{Def:} Fie $\sigma=(F,R,r)$ o signatur\u a. Numim \textbf{formul\u a atomic\u a peste $\sigma$} un \c sir de forma $=tu$ cu $t,u\in T_\sigma$ sau $st_1\cdots t_n$ cu $s\in R,n=r(s),t_i\in T_\sigma$. \textbf{M\c t. formulelor atomice peste $\sigma$} se noteaz\u a cu $F_{a_\sigma}$. \textbf{M\c t. formulelor peste $\sigma$} se define\c ste ca fiind cea mai mic\u a m\c t. $A\subseteq \text{Seq}_\text{fin}(S_\sigma)$ cu prop:
+\begin{itemize}
+    \item formulele atomice apar\c tin lui $A$
+    \item $\perp\in A$
+    \item Dc. $\phi,\psi\in A$, atunci $\phi\psi\in A$
+    \item Dc. $\phi\in A,x\in V$, atunci $\forall x\phi\in A$.
+\end{itemize}
+M\c t. formulelor se noeaz\u a cu $F_\sigma$.
+
+\textbf{Pp. induc\c tiei pe formule:} Fie $B\subseteq F_\sigma$ a.\^ i.:
+\begin{itemize}
+    \item formulele atomice apar\c tin lui $\textbf{}$
+    \item $\perp\in B$
+    \item Dc. $\phi,\psi\in B$, atunci $\phi\rightarrow\psi\in B$
+    \item Dc. $\phi\in B,x\in V$, atunci $\forall x\phi\in B$.
+\end{itemize}
+Atunci $B=F_\sigma$.
+
+\textbf{Pp. recursiei pe formule:} Fie $A$ o m\c t. \c si $G_0:F_{a_\sigma}\rightarrow A,G_\perp\in A,G_\rightarrow:A^2\rightarrow A,G_\forall:V\times A\rightarrow A$. Atunci $\exists! F:F_\sigma\rightarrow A$ a.\^ i:
+\begin{itemize}
+    \item $\forall\phi\in F_{_\sigma},F(\phi)=G_0(\phi)$
+    \item $F(\perp)=G_\perp$
+    \item $\forall\phi,\psi\in F_\sigma,F(\phi\rightarrow\psi)=G_\rightarrow(F(\phi),F(\psi))$
+    \item $\forall\phi\in F_\sigma,x\in V,F(\forall x\phi)=G_\forall(x,f(\phi))$.
+\end{itemize}
+
+\textbf{Def:} Putem def. recursiv \textbf{m\c t. variab. libere ale unei formule}. Fie $FV:F_\sigma\rightarrow P(V),$ prin:
+\begin{itemize}
+    \item $\forall t,u\in T_\sigma, FV(t=u):=Var(t)\cup Var(u)$
+    \item $\forall s\in R,\forall t_1,\cdots t_{r(s)}\in T_\sigma, FV(st_1\cdots t_{r(s)}):=Var(t_1)\cup\cdots\cup Var(t_{r(s)})$
+    \item $FV(\perp):=\emptyset$
+    \item $\forall\phi\psi\in F_\sigma,FV(\phi\rightarrow\psi):=FV(\phi)\cup FV(\psi)$
+     \item $\forall\phi\in F_\sigma ,x\in V, FV(\forall x\phi):=FV(\phi)-\{x\}$.
+    
+\end{itemize}
+Dc. $\phi\in F_\sigma$ cu $FV(\phi)=\emptyset,$ atunci $\phi$ s.n. \textbf{enun\c t}. M\c t. enun\c turilor se noteaz\u a cu $E_\sigma$.
+
+\[ v_{x\leftrightarrow a}(y):= \left\{ \begin{array}{l l} v(y) & \quad \text{pentru $y\neq x$}\\ a & \quad \text{pentru $y=x$}\\ \end{array} \right. \]
+
+\textbf{Def:} Avem c\u a $\exists! ||\cdot||^{\mathbb A}:F_\sigma\rightarrow 2^{A^V}$ a.\^ i. $\forall v:V\rightarrow A$, avem:
+\begin{itemize}
+    \item $\forall t,u\in T_\sigma, ||t=u||_v^{\mathbb A}=1\iff t_v^{\mathbb A}=u_v^{\mathbb A}$
+    \item $\forall s\in R,\forall t_1,\cdots t_{r(s)}\in T_\sigma,||st_1\cdots t_{r(s)}||_v^{\mathbb A}=1\iff((t_1)_v^{\mathbb A}\cdots (t_{r(s)})_v^{\mathbb A}\in A_s $
+    \item $||\perp||_v^{\mathbb A}=\perp=0$
+    \item $\forall \phi,\psi\in F_\sigma,||\phi\rightarrow\psi||_v^{\mathbb A}=||\phi||_v^{\mathbb A}\rightarrow ||\psi||_v^{\mathbb A}$
+    \item $\forall \phi\in F_\sigma,x\in V, ||\exists x\phi||_v^{\mathbb A}=1\iff\exists a \in A $ cu $||\phi||_{v\leftrightarrow a}^{\mathbb A}$
+\end{itemize}
+
+\textbf{Def:} Spunem c\u a $\chi\in F_\sigma$ s.n. \textbf{tautologie} dc. $\forall F:F_\sigma\rightarrow 2$ cu $F(\perp)=0$ \c si $\forall\phi,\psi\in F_\sigma, F(\phi\rightarrow\psi)=F(\phi)\rightarrow F(\psi),$ avem $F(\chi)=1$.
+
+\textbf{Prop:} Orice tautologie este formul\u a valid\u a.
+
+\textbf{Lema variab. libere:} Fie $\mathbb A=(A,(A_s)_{s\in F\cup R}$ o $\sigma-$structur\u a, $v_1,v_2:V\rightarrow\mathbb A$ \c si $\phi\in F_\sigma$ a.\^ i. $v_{FV(\phi)}=v_{2|FV(\phi)}$. Atunci $||\phi||_{v_1}^{\mathbb A}=||\phi||_{v_2}^{\mathbb A}$.
+
+\textbf{Prop:} Fie $\chi\in F_\sigma, y\in V,u\in T_\sigma$. Atunci, dc. $Var(\chi)\cap Var(u)=\emptyset$, avem c\u a $y$ este liber pt. $u$ \^ in $\chi$.
+
+\textbf{Prop. substitu\c tiei libere:} Fie $\chi\in F_\sigma, t,u\in T_\sigma,y\in V, \mathbb A \sigma-$structur\u a cu universul $A$ \c si $v:V\rightarrow A$. Atunci:
+\begin{itemize}
+    \item $(t[y:=u])_v^{\mathbb A}=t_{v_{y\leftrightarrow u_v^{\mathbb A}}}^{\mathbb A}$
+    \item dc. $y$ este liber pt. $u$ \^ in $\chi$, $||\chi[y:=u]||_v^{\mathbb A}=||\chi||_{v_{y\leftrightarrow u_v^{\mathbb A}}}^{\mathbb A}$.
+\end{itemize}
+
+\textbf{Prop:} Fie $\chi\in F_\sigma,y\in V,u\in T_\sigma, A \sigma-$structur\u a cu universul $A$ \c si $v:V\rightarrow A$. pp c\u a $y$ este liber pt. $u$ \^ in $\chi$. Atunci avem $||\forall y\chi\rightarrow (\chi[y:=u])||_{v}^{\mathbb A}=1$.
+
+\textbf{Prop:} Fie $\chi \in F_\sigma$.
+\begin{itemize}
+    \item Fie $y\in V,u\in T_\sigma$. Atunci $y$ este liber pt. $u$ \^ in $\chi^{Var(u)}$
+    \item Fie $W\subseteq V$ finit\u a, $\mathbb A, \sigma-$structur\u a cu universul $A,v:V\in A$. Atunci $||\chi^W||_v^{\mathbb A}=||\chi||_v^{\mathbb A}$
+\end{itemize}
+
+\textbf{Prop:} Fie $\chi,y,u$ cu $y$ nu e liber pt. $u$ \^ in $\chi$. Atunci avem, $\forall \mathbb A,v,||\chi[y:=u]||_v^{\mathbb A}$ este valid\u a.
+
+
+
+
+
+
+
+\end{document}
