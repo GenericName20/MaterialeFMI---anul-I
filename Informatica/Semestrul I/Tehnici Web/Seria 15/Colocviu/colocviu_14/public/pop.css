@@ -1,0 +1,12 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: LightCyan;
+    height: 100%;
+}
+#score{
+    background-color: LightCyan;
+    text-align: right;
+}

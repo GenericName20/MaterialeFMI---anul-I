@@ -1,0 +1,77 @@
+.container {
+    display: grid;
+    grid-template-rows: repeat(7, 80px);
+    grid-template-columns: repeat(3, 80px);
+    padding: 4%;
+    grid-gap: 5px;
+}
+
+.box {
+    background-color: plum;
+    padding: 23px;
+    text-align: center;
+    color: darkmagenta;
+    border-color: darkmagenta;
+    border-style: dotted;
+    border-width: 4px;
+}
+
+#zero {
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cerc {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cerc:hover {
+    background-color: darkmagenta;
+    transform: scale(0.25);
+    transition: 0.33s;
+}
+
+#unu {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+}
+
+#doi {
+    grid-row: 4 / span 1;
+    grid-column: 2 / span 1;
+}
+
+#trei {
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+}
+
+#patru  {
+    grid-row: 6 / span 1;
+    grid-column: 2 / span 2;
+}
+
+#cinci {
+    grid-row: 7 / span 1;
+    grid-column: 2 / span 1;
+}
+
+#sase {
+    grid-row: 7 / span 1;
+    grid-column: 3 / span 1;
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+    .container {
+        display: block;
+    }
+}
