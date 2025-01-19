@@ -1,1 +1,1 @@
-
+Fata de anul universitar 2023-2024, toti profesorii titulari ai seriilor de Informatica difera in anul universitar 2024-2025, asadar au fost selectate materiale considerate de ajutor in general, fara a imparti pe serii.
