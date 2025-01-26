@@ -1,0 +1,1 @@
+În anii trecuți, titularul de curs de la Seria 13 era domnul profesor Cornel Băețica, titularul de curs de la Seria 14 era domnul profesor Marius Vlădoiu, iar titularul de curs de la Seria 15 era domnul profesor Dumitru Stamate. 
