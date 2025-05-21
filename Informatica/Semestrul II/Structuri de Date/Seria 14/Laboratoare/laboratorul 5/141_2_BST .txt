@@ -1,0 +1,121 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream in("bst.in");
+ofstream out("bst.out");
+
+struct Node
+{
+    int valoare;
+    Node* right = NULL;
+    Node* left = NULL;
+};
+
+void inserare(Node* &radacina, int val) {
+    if(radacina == NULL) {
+        radacina = new Node;
+        radacina->valoare = val;
+        ///radacina->left = NULL;
+        ///radacina->right = NULL;
+    }
+    else {
+        if(radacina->valoare > val)
+            inserare(radacina->left, val);
+        else inserare(radacina->right, val);
+    }
+}
+
+void inordine(Node* radacina) {
+    if(radacina != NULL) {
+        inordine(radacina->left);
+        out << radacina->valoare << ' ';
+        inordine(radacina->right);
+    }
+}
+
+int minim(Node* radacina) {
+    if(radacina == NULL) {
+        return -1;
+    }
+    if(radacina->left != NULL) {
+        return minim(radacina->left);
+    }
+    else return radacina->valoare;
+}
+
+
+
+void stergere(Node* &radacina, int val) {
+    if(radacina == NULL)
+    {
+        return;
+    }
+    else
+    {
+        if(radacina->valoare > val) {
+            stergere(radacina->left, val);
+            return;
+        }
+        if(radacina->valoare < val) {
+            stergere(radacina->right, val);
+            return;
+        }
+
+        if(radacina->valoare == val){
+            if(radacina->left == NULL && radacina->right == NULL) {
+                delete radacina;
+                radacina = NULL;
+                return;
+            }
+            if(radacina->left != NULL && radacina->right == NULL) {
+
+                Node* p = radacina;
+                radacina = radacina->left;
+                delete p;
+                return;
+            }
+            if(radacina->left == NULL && radacina->right != NULL) {
+
+                Node* p = radacina;
+                radacina = radacina->right;
+                delete p;
+                return;
+            }
+
+            int mini = minim(radacina->right);
+            radacina->valoare = mini;
+            stergere(radacina->right, mini);
+            return;
+
+        }
+    }
+
+}
+
+
+int main()
+{
+
+    Node* radacina = NULL;
+    int n;
+    in >> n;
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        in >> x;
+        inserare(radacina, x);
+    }
+    inordine(radacina);
+
+
+    stergere(radacina, 3);
+
+    stergere(radacina, 17);
+
+    out << '\n';
+
+    inordine(radacina);
+    return 0;
+}

@@ -1,0 +1,109 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream in("bst.in");
+ofstream out("bst.out");
+
+struct Node
+{
+    int valoare;
+    Node* right = NULL;
+    Node* left = NULL;
+};
+
+Node* insertNode(Node *Root, int value)
+{
+    if(Root == NULL)
+    {
+        Root = new Node;
+        Root->valoare = value;
+        Root->left=NULL;
+        Root->right=NULL;
+        return Root;
+    }
+    if(value >= Root->valoare)
+    {
+        Root->right = insertNode(Root->right, value);
+    }
+    else
+    {
+        Root->left = insertNode(Root->left, value);
+    }
+    return Root;
+}
+
+int findMin(Node *root)
+{
+    if(!root)
+        return -1;
+    if(!root->left)
+        return root->valoare;
+    else return findMin(root->left);
+}
+
+void deleteNode (Node *&root, int value)
+{
+    if(!root)
+        return;
+    if(root->valoare<value)
+        deleteNode(root->right, value);
+    else if(root->valoare>value)
+        deleteNode(root->left, value);
+    else
+    {
+        if(!root->left and !root->right)
+        {
+            delete root;
+            root=NULL;
+        }
+        else if(!root->left)
+        {
+            Node *temp = root;
+            root=root->right;
+            delete temp;
+        }
+        else if(!root->right)
+        {
+            Node *temp = root;
+            root=root->left;
+            delete temp;
+        }
+        else
+        {
+            int minim = findMin(root->right);
+            root->valoare=minim;
+            deleteNode(root->right, minim);
+        }
+    }
+}
+
+void inordine(Node* Root)
+{
+    if(Root!=NULL)
+    {
+        inordine(Root->left);
+        out<<Root->valoare<<" ";
+        inordine(Root->right);
+    }
+}
+
+int main()
+{
+
+    int n;
+    in>>n;
+    Node *Root=NULL;
+    for(int i=0; i<n; i++)
+    {
+        int value;
+        in>>value;
+        Root = insertNode(Root, value);
+    }
+    inordine(Root);
+    deleteNode(Root, 7);
+    out<<'\n';
+    inordine(Root);
+    return 0;
+}
