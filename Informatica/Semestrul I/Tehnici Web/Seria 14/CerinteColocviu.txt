@@ -1,0 +1,40 @@
+Partea 1
+1)Find Nessy! Scrieți un fișier HTML nessy.html care să conțină un div cu clasa container. În interiorul lui, adăugați încă alte 8 divuri. Creați un fișier nessy.css în care să adăugați reguli CSS astfel încât pagina să arate ca în imaginea de mai jos și:
+fiecare coloană să aibă lățimea de 80px
+spațiul dintre linii și coloane să fie de 5px
+divurile să aibă padding de 23px
+textul să fie centrat pe orizontală
+divurile (mai puțin cercul) vor avea fundal Plum, textul colorat cu DarkMagenta și border DarkMagenta, punctat, de 4px
+divul în formă de cerc nu va avea border și va avea fundal alb.
+layout
+
+2)Adăugați reguli CSS astfel încât la trecerea mouse-ului deasupra divului în formă de cerc
+divul va avea fundal DarkMagenta
+se va micșora la un sfert din mărimea inițială, treptat, într-o tranziție de 0.33 secunde.
+layout hover
+
+3)Scrieți un media query pentru ferestre cu lățimea între 300px și 500px astfel încât divurile să nu mai fie afișate cu layoutul de mai sus, ci în formatul default, unele sub altele, ocupând întreaga lațime a containerului, precum în imaginea de mai jos.
+layout
+
+Partea 2
+Scrieți un fișier HTML pop.html care să conțină un body gol și să încarce fișierul de stil pop.css pe care îl puteți găsi în directorul resources. Adăugați cod JavaScript în fișierul pop.js astfel încât să creați un mic joc cu baloane.
+
+La apăsarea tastei b va apărea pe ecran, la o poziție aleatoare, un balon: folosiți imaginea balloon.png din directorul resources/images.
+
+bubbles
+
+La apăsarea unui balon de pe ecran, acesta sa va 'sparge'. Imaginea balonului se va schimba, fiind mai întâi înlocuită cu imaginea pow.png din directorul resources/images, iar apoi, după 0.3 secunde va dispărea. În plus, va fi cântat ('played') un sunet, ales aleator din cele trei sunete furnizate în directorul resources/sounds (pop-1.mp3, pop-2.mp3, pop-3.mp3). Hint: folosiți elementul html audio (încărcat dinamic cu JavaScript).
+
+La apăsarea tastei p, baloanele încep să zboare: se vor deplasa pe verticală, în sus (pot ieși din ecran). Hint: folosiți setInterval. La apăsarea tastei f, gravitația încetează: baloanele nu se mai mișcă.
+
+Salvați în localStorage numărul de baloane sparte în total și afișați-l în colțul din dreapta sus a ecranului.
+
+Partea 3
+Scrieți un fișier HTML champ.html astfel încât să desenați, folosind fie elementul canvas (și cod JavaScript), fie SVG, fie cod CSS, un teren de fotbal ca în imaginea de mai jos.
+rainbow
+
+Dacă nu știți să desenați terenul folosind canvas, SVG sau CSS, puteți folosi imaginea 'resources/images/pitch.png' pentru a continua rezolvarea subiectului (cu punctaj parțial, pentru neîndeplinirea primei cerințe).
+
+La apăsarea terenului de fotbal, se va alege un meci din lista din fișierul champ.json. Folosiți fetch și promisiuni pentru a accesa conținutul fișierului pe un server http local (porniți un server http folosind, de exemplu, Python, cu comanda python3 -m http.server 5000). La fiecare click pe terenul de fotbal, se va alege aleator un meci și se vor afișa sub teren steagurile (imaginile al căror path este salvat în câmpurile homeflag și guestflag) țărilor celor două echipe care joacă meciul, iar sub imagini, data și ora la care va avea loc meciul.
+
+La trecerea cu mouse-ul deasupra unui steag, se va afișa sub informațiile despre meci țara căreia îi corespunde.

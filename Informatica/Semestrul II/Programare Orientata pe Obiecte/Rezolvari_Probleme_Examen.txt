@@ -1,0 +1,108 @@
+Rezolvari grile POO:
+
+1. ambiguitate de functii linia 29, redenumim functia float.
+2. eroare, avem static neinitializat(cu A::x global/main), stergem "static" din fata variabilei.
+3. merge si ne da 6 21 3
+4. linia 20, nu putem parsa obiect de tip problema in functie mister2 ce primeste adresa de memorie, stergem& la void mister2(persoana& o)
+5. Corect, da 7 7 7 pt ca la downcast la d, in continuare cand apeleaza getterul se uita la getterul din B si dupa a cel mai derivat(adica din MM chiar daca e pointer la D)
+6. Corect, va da 6, la b+=a apeleaza operatorul int() si transforma a-ul in int
+7. Eroare la linia 19, cand apeleaza new D nu are acces la baza B(fiind protected), facem mostenirea publica class D: public B{ iar ca rezultat ne da 1(pt ca typeid.name nu e D*, e cv gen P1D si deci nu afiseaza 2-ul). Daca era obiect ( D a nu crapa, dar crapa la cout<<a.get_i() din acelasi motiv) de revizuit
+8. Crapa la linia 17, nu are acces la ob.x( x fiind camp protected, dar considerat ca privat pt alte obiecte, il facem public si ne da -5
+9. Merge, afiseaza 1131
+10. Ruleaza, afiseaza valoarea de la( adresa din memorie al lui a + 23)
+11. Crapa la linia 20, nu recunoaste operatorul <<, ca sa rezolvam ar trb scris coutul invers ( (a1+a2)<<cout;)
+12. crapa la linia 17, cand creeaza vector implicit apeleaza constructorul fara parametrii care nu exista, ca sa rezolvam punem parametrul din constructorul cu parametru o valoare default si dupa afiseaza 0123456789
+13. Compileaza, se pare ca daca difera parametrul, ca e float si nu int atunci nu avem ambiguitate
+14. Crapa la linia 29, nu avem constructor fara parametrii, setam la constructorul lui B o valoare default si va afisa 112112 
+15. compileaza, ne da 5-19 pt ca se apeleaza constructori impliciti
+16. Merge, afiseaza -12
+17. Merge, afiseaza -11 
+18. Merge, se va afisa adresa lui a + 5
+19. Merge, se va afisa -17
+20. Crapa, la linia 31 unde avem declarat { MM b } si comentam acele linii, si va afisa 7 7 7
+21. Merge, afiseaza -15, se la e2=e1 se apeleaza copy constructorul.
+22. Crapa, i-ul e privat, se pune protected
+23. Crapa la linia 43, trb dynamic_cast la p ca sa poti afisa
+24. Crapa la linia 28, se apeleaza functia f care este ambigua, ca sa rezolvam redenumim functia float in f1 sau schimbam antetul functiei
+25. Crapa deoarece nu avem referire la zona de memorie statica, ca sa rezolvam stergem keywordul static de la linia 4 si va afisa 212
+26. Merge si afiseaza -12 (este identic cu grila 16)
+27. Crapa la linia 25 pt ca nu exista obiectul o in memorie, el a fost distrus la finalul else-ului. O solutie ar fi sa nu-l mai afisam, sau sa-l declaram in main, la inceput
+28. linia 20, nu putem parsa obiect de tip problema in functie mister2 ce primeste adresa de memorie, stergem& la void mister2(persoana& o) (este identic cu exercitiul 4)
+29. Merge, afiseaza 7 7 7(identic cu ex 5)
+30. Merge, da +6
+31. Crapa, faci pointer la o derivata ce mosteneste o clasa protected, ca sa reparam facem mostenirea publica.
+32. Acelasi cu ex8
+33. Acelasi cu ex9
+34. Acelasi cu ex10
+35. Acelasi cu ex11
+36. Acelasi cu ex12
+37. Merge, afiseaza 7 (poti avea getter nestatic pe variabila statica)
+38. Crapa la linia 7 pt ca incearca sa adune pointeri, ca solutie inlocuim la linia 17 cu cout<<f(*a,*b);
+39. Crapa, ambiguitate la linia 38 pt ca sunt mai multe functii cu acelasi antet, inlocuim antetul unei functii(ii punem alt nume) si apelam functia cu acel nume
+40. Merge si afiseaza 5
+41. Merge
+42. Crapa la linia 20, nu exista o in memorie
+43. Merge, afiseaza c1 c2 c1 c2 c1 c3 d3 d1 d2 d1 d2 d1
+44. Merge, afiseaza 1
+45. Crapa la linia 7 ca ai const acolo si daca functia returneaza o adresa se poate modifica, ca sa rezolvam scoatem adresa si afiseaza -1
+46. Crapa la linia 17, nu poti face egalitate intre un D si un B, ca sa rezolvi faci downcast la tipul D
+47. Ruleaza, insa nu afiseaza nimic
+48. Crapa. Nu are acces la getter fiind mostenire protected, ca sa rezolvi faci mostenirea publica
+49. Merge si afiseaza 1500
+50. Merge si afiseaza B D D2 MM 7 7 7
+51. Merge si afiseaza 1
+52. Crapa la linia 24, incearca sa apeleze D::get_x fara sa avem obiect, ca solutie facem getterul static
+53. Crapa la linia 8 (aceeasi problema ca la ex12)
+56. Merge
+57. Merge, afiseaza 0 0
+58. E ca 57
+59. Crapa la linia 19, nu are acces la campul x, trebuie apelat cu return B::get_x();
+60. Merge si da 200
+61. Merge si afiseaza 20 22.
+62. Identic cu 61
+63. Eroare la linia 13, nu poti apela f(d) pt ca f e metoda, ca sa rezolvi o scrii in afara clasei si scoti adresa.
+64. Merge, va afisa 0, probabil se apeleaza copy constructor implicit
+65. Merge, va afisa 98765432210
+67. Crapa la linia 22, nu e acces la u.x deoarece obiectul u are campul private si se face copie, si 
+68. Crapa la linia 9, functia nu face conversie implicita la apelul functiei. Ca sa reparam facem sa primeasca un obiect de tip 1 si reparam comentand linia 9 si va afisa 30 30
+70. Merge si afiseaza 28
+71. Merge si afiseaza 14
+72. Merge si afiseaza 37
+73. Crapa pt ca avem si constructor fara parametrii si constructor cu valoare default ce duce la ambiguitate. Ca sa rezolvam stergem constructorul fara parametrii si ne va afisa 41
+74. Compileaza, dar nu afiseaza nimic pentru ca obiectul returnat din functia f este referinta si altfel este distrus, deci nu se salveaza.
+75. Merge si afiseaza 20 30.
+76. obiectul de tip cls e constant iar in functia f nu e dat ca si const, deci ca sa reparam scoatem constul.
+77. Merge si afiseaza 1
+79. Crapa la linia 31 pt ca apeleaza a[i] dar a e constant, scoatem constul de la linia 31
+80. Crapa la linia 15, nu are acces la campul x fiind privat. trb facut protected 
+81. Merge si va afisa 41
+82. Merge si va afisa o valoare din memorie(v[0] nu a fost initializat cu 0), dupa 3 de 0, -15, si dupa zerouri
+83. Crapa la linia 12, nu poti da ++ la o zona de memorie pusa constanta, ca sa rezolvi modifici linia 12 in b=a.f(); si va afisa 14
+84. Crapa la liniile 19 si 20 intrucat x-ul este privat(NU CONTEAZA daca e static sau nu, el tot privat), ca sa modificam vom pune protected si va afisa 2 2 1
+85. Merge si va afisa 11
+86. Crapa la linia 8 ca e apelata functia fara parametru, ca sa rezolvam vom returna x/2 si programul va afisa 0
+87. Merge insa va afisa niste chestii aiurea deoarece la final dezaloca memoria pt vector de 2 ori deoarece nu exista operatorul = supraincarcat si se copiaza bit cu bit
+88. Merge si nu afiseaza nimic deoarece in if-ul acela cu typeid nu va intra
+89. Crapa la linia 17 pt ca nu are constructor fara parametrii, ii dam la cel cu parametru o valoare default pt i.
+90. Merge si afiseaza -3 (cum la apel functiei f(a,b) nu se incadreaza nici pt template, nici pt specializare, face conversie din float in int si intra in specializare)
+91. Crapa la linia 9 (referinta de la o zona de memorie la un const int nepermisa), solutie1: scoatem constul, solutie2: scoatem adresa si va afisa 5
+92. Crapa la linia 26 ca nu am constructor pt A fara parametrii, si ca sa rezolvam punem valoarea default 5 la cel cu parametri si va afisa 5 de 1
+93. Merge si va afisa "tipuri diferite" pt ca p e pointer de tip A chiar daca ii dai new B
+94. Merge si va afisa -16
+96. Crapa la linia 14 pt ca a nu are acces la campul lui, punem in clasa A ca e friend class B
+97. Crapa la linia 21, nu face conversie implicita de la B la int, ca sa modificam schimbam la operatorul + cu += si va afisa -21 (pt ca tu afisezi b-ul care nu se modifica)
+98. Crapa la linia 44, cand apeleaza coutul se face copie a lui B cu copy constructor si nu-i convine tipul, scoatem constul.
+99. Merge si da 4
+100.Crapa la linia 6, incerc sa-i dau valoare la o variabila statica in constructor, scot de acolo declararea
+101.Merge si afiseaza 11315
+102.Merge si afiseaza 3
+103.Crapa la linia 14, nu poti avea pointer de derivata catre obiect de baza, ci invers: B* p = new D
+104.Merge si va afisa: cb  cd1  cd2  cb  cd1  cb  cd1 6 dd1  db  dd1  db  dd2  dd1  db  dd1  db  dd2  dd1  db 
+105.Merge si va afisa 102
+106.Merge si va afisa 7 7 7 7 14
+107.Crapa ca nu are acces la get_x, facem mostenirea de la B publica
+108.Merge si afiseaza 22345
+109.Crapa la liniile 6 si 8 pt ca obiectul constant apeleaza metoda f1 care nu e constanta, si ii punem const
+110.Crapa la linia 7 pt ca x-ul e static si nu e declarat inafara clasei. Ca solutie, il declaram inafara clasei iar programul va compila dar nu va afisa nimic
+111.Eroare la linia 18, conversie din tip derivat in tip de baza, ca sa reparam face al 2 lea pointer de tip d si va afisa 51.
+112.Eroare la linia 8, ca acea metoda nu e folosita corect, ar trebui sa o facem FRIEND
