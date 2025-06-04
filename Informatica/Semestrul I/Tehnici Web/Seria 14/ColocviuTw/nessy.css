@@ -1,0 +1,86 @@
+.container {
+    display: grid;
+    grid-template-columns:repeat(3,80px);
+    grid-template-rows: repeat(6,80px);
+    gap: 5px;
+    grid-template-areas:
+    "i0 i0 ."
+    "i0 i0 ."
+    ". i1 ."
+    ". i2 ."
+    ". i3 ."
+    ". i4 i4"
+    ". i5 i6";
+}
+ 
+div {
+    padding: 23px;
+    text-align: center;
+}
+ 
+.i1 , .i2 , .i3, .i4 , .i5 , .i6 {
+    background-color: plum;
+    border-color: darkmagenta;
+    border-width: 4px;
+    border-style: dotted;
+    color:darkmagenta;
+}
+ 
+#circle {
+    background-color: white;
+    color: darkmagenta;
+    border-radius: 100%;
+    width: auto;
+    height: auto;
+}
+ 
+#circle:hover {
+    background-color: darkmagenta;
+    transform: scale(.25);
+    transition-duration: 0.33s;
+}
+ 
+.i0{
+    background-color: plum;
+    border-color: darkmagenta;
+    border-width: 4px;
+    border-style: dotted;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: i0;
+}
+ 
+.i1 {
+    grid-area: i1;
+}
+ 
+.i2 {
+    grid-area: i2;
+}
+ 
+.i3 {
+    grid-area: i3;
+}
+ 
+.i4 {
+    grid-area: i4;
+}
+ 
+.i5 {
+    grid-area: i5;
+}
+ 
+.i6 {
+    grid-area: i6;
+}
+ 
+@media screen and (min-width:300px) and (max-width:500px) {
+    .container {
+        display: inline;
+    }
+    #circle {
+        width: 25%;
+        height: 25%;
+    }
+}
