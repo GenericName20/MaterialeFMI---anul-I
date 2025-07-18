@@ -1,0 +1,56 @@
+A) ASCENDENT DUPA GRUPA, IAR FIECARE ELEV AL GRUPEI IN ORDINE LEXICOGRAFICA:
+
+ 1. Elevul <NATAU HORIA> din grupa <132> cu mediile <10, 6, 4, 7, 10, 4> este PROMOVAT
+ 2. Elevul <FERATTI DANIEL> din grupa <133> cu mediile <9, 9, 9, 9, 9> este PROMOVAT
+ 3. Elevul <BRATU COSTEL> din grupa <141> cu mediile <8, 9, 10, 9, 10, 10> este PROMOVAT
+ 4. Elevul <OLTEANU DAVID-MARIAN> din grupa <141> cu mediile <9, 8, 10, 9, 10, 10> este PROMOVAT
+ 5. Elevul <GEAMANU IANIS> din grupa <142> cu mediile <8, 0, 10, 10, 10, 10> este NEPROMOVAT
+ 6. Elevul <NEAMTU ALBERT-GEORGE> din grupa <142> cu mediile <8, 8, 7, 9> este PROMOVAT
+ 7. Elevul <KELEMEN CONSTANTINESCU> din grupa <143> cu mediile <9, 10, 8, 10, 10, 9> este PROMOVAT
+ 8. Elevul <GHEORGHE MARIUS> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10, 10> este PROMOVAT
+ 9. Elevul <JOITA CARMINA> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10> este PROMOVAT
+10. Elevul <MINCIUNESCU VLAD-ANDREI> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10, 10> este PROMOVAT
+----------------------------------------------------------------------------------------------------
+
+B) ASCENDENT DUPA PROMOVABILITATE, IAR FIECARE ELEV PROMOVAT, APOI NEPROMOVAT, IN ORDINE LEXICOGRAFICA:
+
+ 1. Elevul <BRATU COSTEL> din grupa <141> cu mediile <8, 9, 10, 9, 10, 10> este PROMOVAT
+ 2. Elevul <FERATTI DANIEL> din grupa <133> cu mediile <9, 9, 9, 9, 9> este PROMOVAT
+ 3. Elevul <GHEORGHE MARIUS> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10, 10> este PROMOVAT
+ 4. Elevul <JOITA CARMINA> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10> este PROMOVAT
+ 5. Elevul <KELEMEN CONSTANTINESCU> din grupa <143> cu mediile <9, 10, 8, 10, 10, 9> este PROMOVAT
+ 6. Elevul <MINCIUNESCU VLAD-ANDREI> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10, 10> este PROMOVAT
+ 7. Elevul <NATAU HORIA> din grupa <132> cu mediile <10, 6, 4, 7, 10, 4> este PROMOVAT
+ 8. Elevul <NEAMTU ALBERT-GEORGE> din grupa <142> cu mediile <8, 8, 7, 9> este PROMOVAT
+ 9. Elevul <OLTEANU DAVID-MARIAN> din grupa <141> cu mediile <9, 8, 10, 9, 10, 10> este PROMOVAT
+10. Elevul <GEAMANU IANIS> din grupa <142> cu mediile <8, 0, 10, 10, 10, 10> este NEPROMOVAT
+----------------------------------------------------------------------------------------------------
+
+C) DESCENDENT DUPA SUMA CREDITELOR, APOI DUPA GRUPA, APOI IN ORDINE LEXICOGRAFICA:
+
+ 1. Elevul <GHEORGHE MARIUS> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10, 10> este PROMOVAT
+ 2. Elevul <MINCIUNESCU VLAD-ANDREI> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10, 10> este PROMOVAT
+ 3. Elevul <JOITA CARMINA> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10> este PROMOVAT
+ 4. Elevul <BRATU COSTEL> din grupa <141> cu mediile <8, 9, 10, 9, 10, 10> este PROMOVAT
+ 5. Elevul <OLTEANU DAVID-MARIAN> din grupa <141> cu mediile <9, 8, 10, 9, 10, 10> este PROMOVAT
+ 6. Elevul <KELEMEN CONSTANTINESCU> din grupa <143> cu mediile <9, 10, 8, 10, 10, 9> este PROMOVAT
+ 7. Elevul <GEAMANU IANIS> din grupa <142> cu mediile <8, 0, 10, 10, 10, 10> este NEPROMOVAT
+ 8. Elevul <FERATTI DANIEL> din grupa <133> cu mediile <9, 9, 9, 9, 9> este PROMOVAT
+ 9. Elevul <NATAU HORIA> din grupa <132> cu mediile <10, 6, 4, 7, 10, 4> este PROMOVAT
+10. Elevul <NEAMTU ALBERT-GEORGE> din grupa <142> cu mediile <8, 8, 7, 9> este PROMOVAT
+----------------------------------------------------------------------------------------------------
+
+D) ASCENDENT DUPA GRUPA, APOI DUPA PROMOVABILITATE, APOI DUPA SUMA CREDITELOR, APOI IN ORDINE LEXICOGRAFICA:
+
+ 1. Elevul <NATAU HORIA> din grupa <132> cu mediile <10, 6, 4, 7, 10, 4> este PROMOVAT
+ 2. Elevul <FERATTI DANIEL> din grupa <133> cu mediile <9, 9, 9, 9, 9> este PROMOVAT
+ 3. Elevul <BRATU COSTEL> din grupa <141> cu mediile <8, 9, 10, 9, 10, 10> este PROMOVAT
+ 4. Elevul <OLTEANU DAVID-MARIAN> din grupa <141> cu mediile <9, 8, 10, 9, 10, 10> este PROMOVAT
+ 5. Elevul <NEAMTU ALBERT-GEORGE> din grupa <142> cu mediile <8, 8, 7, 9> este PROMOVAT
+ 6. Elevul <GEAMANU IANIS> din grupa <142> cu mediile <8, 0, 10, 10, 10, 10> este NEPROMOVAT
+ 7. Elevul <KELEMEN CONSTANTINESCU> din grupa <143> cu mediile <9, 10, 8, 10, 10, 9> este PROMOVAT
+ 8. Elevul <GHEORGHE MARIUS> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10, 10> este PROMOVAT
+ 9. Elevul <MINCIUNESCU VLAD-ANDREI> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10, 10> este PROMOVAT
+10. Elevul <JOITA CARMINA> din grupa <151> cu mediile <10, 10, 10, 10, 10, 10> este PROMOVAT
+----------------------------------------------------------------------------------------------------
+

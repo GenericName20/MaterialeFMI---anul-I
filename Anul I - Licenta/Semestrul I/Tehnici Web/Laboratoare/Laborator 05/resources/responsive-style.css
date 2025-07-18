@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  /* ne permite să includem paddingul 
+  și borderul în lățimea și înălțimea
+  unui element */
+}
+
+html {
+  font: 1.2em/1.4 Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0 0 1em;
+}
+
+header {
+  background: #fff00f;
+  text-transform: uppercase;
+}
+
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header a {
+  text-decoration: none;
+  display: block;
+  padding: 0.5em 1em;
+  border-top: 1px solid #999;
+  color: #000;
+}
+
+header .title {
+  font-size: 150%;
+  font-style: italic;
+  font-weight: bold;
+  padding: 1em;
+}
+
+main {
+  padding: 0 1em;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards li {
+  border: 5px solid #fff00f;
+  margin-bottom: 1em;
+}
+
+.cards h2 {
+  background: #fff00f;
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+.cards .inner {
+  padding: 0.5em 1em;
+}
+
+.sidebar {
+  background-color: #000;
+  padding: 0.5em 1em;
+  color: #fff;
+}
+
+.sidebar a {
+  color: #fff;
+}
+
+/* Modificați codul de mai jos pentru 
+   a defini layouturi potrivite unor
+   ecrane de dimensiune medie și mare.
+*/
+
+/*
+.cards {
+    display: ?; 
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    grid-gap: ?;
+    margin-bottom: 1em;
+*/
+
+/* code for medium screens */
+/*@media ? {
+    header {
+        display: ?;
+        justify-content: ?;
+        align-items: ?;
+        margin: 1em;
+    }
+    header ul {
+        display: ?;
+    }
+    header li a {
+        ?: 0;
+    }
+}
+*/
+
+/* code for large screens */
+/*@media ? {
+    main {
+        display: ?;
+        ?: ?;
+        ?: 1em;
+    }
+}
+*/
+

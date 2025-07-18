@@ -1,0 +1,55 @@
+/* 
+Înlocuiți simbolurile ? cu valori potrivite pentru 
+a completa regulile CSS de mai jos.
+*/
+
+.main {
+  /* display: ?; /*
+  --s: 100px;  /* size */
+  --m: 4px;    /* margin */
+  --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px); 
+       /* necesar pentru decalarea hexagoanelor;
+          înălțimea a două rânduri de hexagoane */
+}
+
+.container {
+  font-size: 0; 
+  /* înlăturăm spațiul dintre 
+     elemente inline-block */
+}
+
+.container div {
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s)*1.1547);
+  background: black;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%); 
+  
+  /* display: ?; */
+  margin-bottom: calc(var(--m) - var(--s)*0.2885); /* offset -25% pe verticală 
+  						   pentru aliniere exactă */
+  font-size: initial; /* revenim la dimensiunea default */
+}
+
+/* alternăm culorile hexagoanelor */
+/*.container div:? {
+  background: #fff00f;
+} */
+
+/* decalăm hexagoanele la dreapta folosind 
+   proprietatea shape-outside ce determină o 
+   figură în jurul căreia conținutul inline
+   adiacent unui element trebuie să facă wrap:
+   https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside
+*/
+.container::before {
+  content: "";
+  width: calc(var(--s)/2 + var(--m));
+  /* float: ?; */
+  height: 120%;
+  shape-outside: repeating-linear-gradient(     
+                   #0000 0 calc(var(--f) - 3px),      
+                   #000  0 var(--f));
+}
+
+

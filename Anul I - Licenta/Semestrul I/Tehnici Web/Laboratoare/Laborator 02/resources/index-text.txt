@@ -1,0 +1,47 @@
+8-bit world
+
+8-bit games
+
+In the history of video games, the third generation of game consoles, commonly referred to as the 8-bit era, began on July 15, 1983, with the Japanese release of two systems: Nintendo's Family Computer (commonly abbreviated to Famicom) and Sega's SG-1000. This generation marked the end of the video game crash of 1983, and a shift in the dominance of home video game manufacturers from the United States to Japan. The best-selling console of this generation was the NES/Famicom from Nintendo, followed by the Sega Master System (the improved successor to the SG-1000), and the Atari 7800. Although the previous generation of consoles had also used 8-bit processors, it was at the end of the third generation that home consoles were first labeled and marketed by their "bits".
+
+Here are some of the most popular games of that generation: Super Mario Bros, Legend Of Zelda, Castlevania, Final Fantasy, Tetris, Dragon Ball: Dragon Daihikyō.
+
+Programming for NES
+NES was shipped with only 4 KB of RAM, but "mapper" hardware on the cartridge expanded its capabilities, supporting games as large as 1 MB.
+
+Try programming for NES using the platform below provided by https://8bitworkshop.com/.
+URL: https://8bitworkshop.com/v3.10.0/?platform=nes&file=hello.c
+
+8-bit graphics
+
+8-bit color graphics are a method of storing image information in a computer's memory or in an image file, so that each pixel is represented by 8 bits (1 byte). The maximum number of colors that can be displayed at any one time is 256 or 2^8.
+
+Image 256colour.png caption
+Fig. 1: 8-bit color, with three bits of red, three bits of green, and two bits of blue.
+
+Usage
+Because of the low amount of memory and resultant higher speeds of 8-bit color images, 8-bit color was a common ground among computer graphics development until more memory and higher CPU speeds became readily available to consumers. 8-bit color was used in many different applications including: The MSX2 series of personal computer, The Atari Falcon, Wearable OS smartwatches with ambient displays, Many scanners use an 8-bit grey scale as their standard.
+
+Even though it is now outdated for most consumer applications, 8-bit color encoding can still be useful in imaging systems with limited data bandwidth or memory capacity. For example, both Mars Exploration Rovers used an 8-bit grayscale format for navigation imaging.
+
+Make some 8-bit art!
+Visit https://make8bitart.com/ to make some 8-bit art from scratch, or try the tool from https://8bitworkshop.com/dithertron to transform an image to an 8-bit drawing!
+Graphics in 8-bit games
+
+You can watch the two videos below to find out more about graphics in old 8-bit games.
+https://www.youtube.com/watch?v=Tfh0ytz8S0k
+https://www.youtube.com/watch?v=_rsycfDliZU
+
+8-bit music
+
+Chiptune (https://en.wikipedia.org/wiki/Chiptune), also known as chip music or 8-bit music, is a style of synthesized electronic music made using the programmable sound generator sound chips or synthesizers in vintage arcade machines, computers and video game consoles. The term is commonly used to refer to tracker format music which intentionally sounds similar to older PSG-created music (this is the original meaning of the term), as well as music that combines PSG sounds with modern musical styles. It has been described as "an interpretation of many genres" since any existing song can be arranged in a chiptune style defined more by choice of instrument and timbre than specific style elements.
+
+Technology
+A waveform generator is a fundamental module in a sound synthesis system. A waveform generator usually produces a basic geometrical waveform with a fixed or variable timbre and variable pitch. Common waveform generator configurations usually included two or three simple waveforms and often a single pseudo-random-noise generator. Available waveforms often included pulse wave (whose timbre can be varied by modifying the duty cycle), square wave (a symmetrical pulse wave producing only odd overtones), triangle wave (which has a fixed timbre containing only odd harmonics, but is softer than a square wave), and sawtooth wave (which has a bright raspy timbre and contains odd and even harmonics). Two notable examples of systems employing this technology were the Nintendo Game Boy portable game console and the Commodore 64 personal computer.
+
+You can watch the video below to find out more about 8-bit music:
+https://www.youtube.com/watch?v=q_3d1x2VPxk
+
+Make some 8-bit music!
+Try the Commodore64 8-music player below:
+https://www.igorski.nl/application/websid/

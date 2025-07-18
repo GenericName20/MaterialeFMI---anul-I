@@ -1,0 +1,114 @@
+ITEM,RASPUNS PROPRIU,GRESELI / OBS,PUNCTAJ POSIBIL,PUNCTAJ ASTEPTAT
+1.1,B,In loc de B trebuia A,4,0
+1.2,C,In loc de C trebuia D,4,0
+1.3,B,In loc de B trebuia D,4,0
+1.4,D,In loc de D trebuia B,4,0
+1.5,D,In loc de D trebuia C,4,0
+2.1.a,a) 111112121,Am uitat sa scriu un 1,6,5
+2.1.b,"9, 15",Am nimerit doar 15.,6,3
+2.1.c,"#include <iostream>
+using namespace std;
+int main() {
+    int x, y; cin >> x >> y;
+    if (x > 0 && y > 0) {
+        if (x > y) swap(x, y);
+        int nr = 1;
+        for (int i = y; i >= x; --i) {
+            cout << 1 << """";
+            if (nr >= x) {
+                cout << 2 << """";
+            }
+            nr = nr * 3;
+            cout << 1 << """";
+        }
+    }
+    return 0;
+}","1. Am adaugat verificarea if (x > 0 && y > 0) dupa citire pentru a verifica daca sunt numere naturale nenule , dar la BAC mi-au fost scazute 0.1 pentru verificarea asta, pentru ca nu am respectat structura pseudocodului.
+2. Am facut for-ul cu --i. (nu e greseala)
+3. Am pus sirul vid dupa fiecare cout (nu e greseala)
+4. Am facut swap (in barem pierzi 1pct pentru asta)",10,8
+2.1.d,"citeste x, y (numere naturale nenule)
+daca x > y atunci x <-> y
+nr <- 1
+i = y
+repeta
+  scrie '1'
+  daca nr >= x atunci
+     scrie '2'
+  nr = nr * 3
+  scrie '1'
+  i <- i - 1
+pana cand (i < x)
+  ","1. Am folosit structura cu test final.
+2. Am stringuit output-ul (?)
+3. Am alternat <- cu =",6,4
+2.2,"Primul raspuns: [2, 5] = {ciocarlie, scatiu}, al doilea raspuns: [3, 5] = {mierla, scatiu}","Am scris in propozitie, am lasat si lista de indici.",6,6
+2.3,"fs.a = f.a * 2021 - f.b * 2020;
+fs.b = f.a * f.b;",Nu am mai scris struct. In fs.b am scris f.a in loc de 2021.,6,5
+3.1,"void divPrim(long n, int& s)
+{
+	int d = 2;
+	while (n > 1)
+	{
+		int k = 0;
+		while (!(n % d))
+		{
+			n /= d; k++;
+		}
+		if (k % 2 == 0)
+			s += d;
+		d += 1;
+	}
+}","1. Nu am mai apelat functia in main (nu e greseala)
+2. Am identificat gresit puterile impare.",10,9
+3.2,"#include <iostream>
+using namespace std;
+int main()
+{
+	char vocale[6], r[21][11], cuv[11];
+	strcpy(vocale, ""aeiou"");
+	int n, k, rcount(0);
+	cin >> n >> k;
+	cin.get();
+	for (int i = 0; i < n; ++i)
+	{
+		cin.getline(cuv, 10);
+		if (strchr(vocale, cuv[strlen(cuv) - 1]))
+			strcpy(r[rcount++], cuv);
+	}
+	if (rcount < k)
+		cout << ""nu exista"";
+	else
+		for (int i = 1; i <= k; ++i)
+			cout << r[i] << '\n';
+	return 0;
+}","1. Nu am inclus <string.h>
+2. Am citit 10 (9 + '\n') cu cin.getline(), in loc de 11.
+3. In loc de r[++rcount] am scris r[rcount++], desi eu la final afisez de la 1 la rcount.",10,7
+3.3.a,"#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream f(""bac.txt"");
+int main()
+{
+	int x, y, p(10);
+	long n, last(-1), ans1(-1), ans2(-1);
+	f >> x;
+	y = x;
+	while (y /= 10) p *= 10;
+	while (f >> n) {
+		if (last > -1 && last % p == x && n % p == x)
+		{
+			ans1 = last;
+			ans2 = n;
+		}
+		last = n;
+	}
+	if (!(ans1 + 1) || !(ans2 + 1))
+		cout << ""nu exista"";
+	else
+		cout << ans1 << "" "" << ans2;
+	f.close();
+	return 0;
+}",Am interschimbat raspunsul de la punctul a cu cel de la punctul b,2,2
+3.3.b,"Algoritmul prezentat este eficient deoarece opereaza in complexitate O(n), construind raspunsurile in acelasi timp cu obtinerea valorilor din fisierul text. Memoria O(1) se datoreaza evitarii folosirii vectorilor pentru a indexa valorile din fisierul text. Sunt manipulate doua valori consecutive prin stocarea celei curente in variabila n si a celei anterioare in variabila last.",,8,8

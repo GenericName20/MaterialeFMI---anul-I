@@ -1,0 +1,6 @@
+Cuvinte se termina cu grupul "ori": [('fiori', 'flori'), ('fiori', 'ori'), ('flori', 'ori')]
+Cuvinte se termina cu grupul "esc": [('imbogatesc', 'iubesc'), ('imbogatesc', 'lentalnesc'), ('imbogatesc', 'sporesc'), ('imbogatesc', 'strivesc'), ('iubesc', 'lentalnesc'), ('iubesc', 'sporesc'), ('iubesc', 'strivesc'), ('lentalnesc', 'sporesc'), ('lentalnesc', 'strivesc'), ('sporesc', 'strivesc')]
+Cuvinte se termina cu grupul "ina": [('lumina', 'taina')]
+Cuvinte se termina cu grupul "mai": [('mai', 'sintocmai')]
+Cuvinte se termina cu grupul "ele": [('razele', 'tainele')]
+Cuvinte se termina cu grupul "are": [('tare', 'tremuratoare'), ('tare', 'zare'), ('tremuratoare', 'zare')]

@@ -1,0 +1,43 @@
+NUMARUL VALORILOR PARE DIN FIECARE LISTA:
+3 pentru [9, 10, 8, 20, 3, 4, 7, 2, 10]
+2 pentru [8, 10, 9, 3, 4, 2]
+5 pentru [1, 9, 21, 322, 42, 14, 21, 13]
+4 pentru [39, 29, 10, 11, 20, 421, 42]
+
+NUMARUL VOCALELOR DINTR-UN SIR DE CARACTERE:
+48 pentru [maria care acum doua zile a fost la magazin a constatat ca painea pe care a cumparato este plina plina ochi de mucegai]
+8 pentru [am luat ieri nota 10]
+0 pentru [429132121]
+61 pentru [toata lumea vrea bani si bani si bani si bani si bani si bani si bani si bani si bani si bani si bani si bani si bani si bani si bani si bani si bani si bani]
+
+NUMARUL PERECHILOR (X, Y) CU PROPRIETATEA CA X = Y DIN TUPLU:
+1 pentru [(12, 20), (32, 40), (50, 50), (29, 39), (12, 29)]
+0 pentru [(14, 17), (19, 20), (41, 20), (40, 59), (91, 20)]
+2 pentru [(91, 20), (31, 40), (21, 21), (40, 19), (19, 19)]
+
+NUMARUL CUVINTELOR DE LUNGIME 2 DINTR-UN SIR DE CARACTERE:
+2 pentru [Vlad vrea sa mearga la magazin]
+1 pentru [Maria are cateva picioare in plus]
+2 pentru [Ioana vrea sa isi cumpere un microfon]
+4 pentru [Joita bea cafeluta si se da uta uta in leagan]
+2 pentru [Kelemen ar vrea sa manance cateva prajituri]
+1 pentru [Costinel nu are idee cine este Maricica]
+0 pentru [Parpriu este Parpriu, atat]
+
+NUMARUL VALORILOR X PENTRU CARE CMMDC(X, 5) = 1:
+8 pentru [168 94 89 36 40 66 3 66 57 25]
+7 pentru [21 92 177 110 151 145 98 74 132 90]
+8 pentru [6 38 17 79 116 138 175 15 31 9]
+8 pentru [70 129 162 106 99 183 187 190 159 137]
+8 pentru [61 144 35 149 142 95 18 144 197 89]
+9 pentru [141 103 138 137 188 79 53 177 58 55]
+8 pentru [175 64 137 158 139 133 10 182 134 163]
+8 pentru [7 187 119 83 45 66 136 153 99 40]
+5 pentru [120 129 121 180 72 135 105 5 163 41]
+10 pentru [134 1 84 66 171 7 34 142 28 29]
+8 pentru [68 20 76 105 176 187 74 116 122 124]
+7 pentru [55 92 148 185 67 4 8 93 22 195]
+10 pentru [3 72 133 148 141 84 17 69 63 182]
+7 pentru [111 99 20 142 45 24 183 112 49 40]
+8 pentru [116 144 98 189 12 100 10 8 171 178]
+

@@ -1,0 +1,1 @@
+# Permutari cu N elemente, K inversiuni

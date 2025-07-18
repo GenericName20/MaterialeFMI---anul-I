@@ -1,0 +1,10 @@
+
+Task A:
+{'adresa': {'oras': 'Bucuresti', 'strada': 'Iuliu maniu', 'numar': '6'}, 'nume': 'Popescu', 'prenume': 'Ion'}
+{'adresa': {'oras': 'Ploiesti', 'strada': 'Sperantei', 'numar': '9'}, 'prenume': 'Ana', 'nume': 'Grigore'}
+{'adresa': {'strada': 'Silozului', 'numar': '10', 'oras': 'Bucuresti'}, 'nume': 'Mihai', 'prenume': 'Dan'}
+{'adresa': {'strada': 'Imperiului', 'oras': 'Bucuresti', 'numar': '10'}, 'prenume': 'Marian', 'nume': 'Ionut'}
+
+Task B:
+In orasul Bucuresti traiesc cetatenii: [('Popescu', 'Ion'), ('Mihai', 'Dan'), ('Ionut', 'Marian')]
+In orasul Ploiesti traiesc cetatenii: [('Grigore', 'Ana')]

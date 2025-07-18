@@ -1,0 +1,83 @@
+body {
+    background-color: blue;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 55px);
+    grid-template-rows: repeat(6, 55px);
+    gap: 5px;
+}
+
+.container div{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border: 4px dotted darkgoldenrod; 
+    /* am facut border mai subtire ca sa nu se strice gap-ul */
+}
+
+#c1, #c2{
+    border: none;
+    transform: scale(1);
+    transition: transform 0.45s ease;
+}
+
+#c1:active, #c2:active{
+    color:red;
+    background-color: red;
+    transform: scale(0.33);
+    transition: transform 0.45s ease;
+}
+
+
+#A, #B, #C, #E{
+    background-color: Gold;
+}
+
+#c1, #c2{
+    background-color: antiquewhite;
+    padding: 35px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+#D{
+    background-color: goldenrod;
+}
+
+#A{
+    grid-column: 1 / 5;
+    grid-row: 1;
+}
+
+#B{
+    grid-column: 1 / 5;
+    grid-row: 2 / 5;
+}
+
+#C{
+    grid-column: 1;
+    grid-row: 5 / 7;
+}
+
+#D{
+    grid-column: 2 / 4;
+    grid-row: 5;
+}
+
+#E{
+    grid-column: 4;
+    grid-row: 5 / 7;
+}
+
+@media (min-width: 333px) and (max-width: 622px){
+    .container{
+        display: inline;
+    }
+    #c1, #c2{
+        transform: scaleX(0.5);
+    }
+}

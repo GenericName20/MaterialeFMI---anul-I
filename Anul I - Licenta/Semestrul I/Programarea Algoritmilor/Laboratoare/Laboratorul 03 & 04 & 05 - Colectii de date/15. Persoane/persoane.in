@@ -1,0 +1,4 @@
+nume:Popescu,prenume:Ion,adresa:{oras:Bucuresti,strada:Iuliu Maniu,numar:6} 
+prenume:Ana,nume:Grigore,adresa:{oras:Ploiesti,strada:Sperantei,numar:9} 
+nume:Mihai,prenume:Dan,adresa:{strada:Silozului,numar:10,oras:Bucuresti }
+prenume:Marian,nume:Ionut,adresa:{strada:Imperiului,oras:Bucuresti,numar:10}

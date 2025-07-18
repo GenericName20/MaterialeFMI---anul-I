@@ -1,0 +1,54 @@
+/* 
+Înlocuiți simbolurile ? cu valori potrivite pentru 
+a completa regulile CSS de mai jos.
+*/
+
+
+.main {
+  display: flex;
+  --s: 100px;  /* size */
+  --m: 4px;    /* margin */
+  --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px); 
+}
+
+.container {
+  font-size: 0;   
+}
+
+.container div {
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s)*1.1547);
+  background: #fff;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);   
+  margin-bottom: calc(var(--m) - var(--s)*0.2885); 
+  display: inline-block;
+  font-size: initial; 
+  transition: 2s;  
+}
+
+/*?{
+  transition: 0s;
+  background: #fff00f;
+  animation: ? ? ? ?;
+}
+*/
+
+@keyframes animatiles{
+  0%{
+      filter: hue-rotate(0deg);
+  }
+  100%{
+        ?
+  }
+}
+
+.container::before {
+  content: "";
+  width: calc(var(--s)/2 + var(--m));
+  float: left;
+  height: 120%;
+  shape-outside: repeating-linear-gradient(     
+                   #0000 0 calc(var(--f) - 3px),      
+                   #000  0 var(--f));
+}
