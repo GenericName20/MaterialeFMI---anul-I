@@ -6,14 +6,14 @@ body:
   - type: input
     id: nume
     attributes:
-      label: "Nume material"
+      label: "Numele materialului"
       description: "Cum vrei să apară materialul?"
-      placeholder: "Ex: Algoritmi_Grafuri"
+      placeholder: "Ex: Seminar Algoritmi_Grafuri"
     validations:
       required: true
       
   - type: input
-    id: nume
+    id: grupa
     attributes:
       label: "Grupa/Seria pentru care este destinat Materialul"
       description: "Cum vrei să apară materialul?"
@@ -22,11 +22,21 @@ body:
       required: true
 
     - type: input
-    id: nume
+    id: materie
     attributes:
-      label: "Grupa/Seria pentru care este destinat Materialul"
-      description: "Cum vrei să apară materialul?"
-      placeholder: "Ex: Seriile 13 & 15"
+      label: "Materia"
+      description: "Cărei materii ți corespune acest material"
+      placeholder: "Ex: POO"
+    validations:
+      required: true
+
+    
+    - type: input
+    id: prof
+    attributes:
+      label: "Profesorul titular"
+      description: "Numele profesorului de la curs"
+      placeholder: "Ex: Ionescu"
     validations:
       required: true
       
