@@ -15,23 +15,22 @@ body:
   - type: input
     id: grupa
     attributes:
-      label: "Grupa/Seria pentru care este destinat Materialul"
-      description: "Cum vrei să apară materialul?"
+      label: "Grupa/Seria pentru care este destinat materialul"
+      description: "Ex: seria/grupa unde se aplică materialul"
       placeholder: "Ex: Seriile 13 & 15"
     validations:
       required: true
 
-    - type: input
+  - type: input
     id: materie
     attributes:
       label: "Materia"
-      description: "Cărei materii ți corespune acest material"
+      description: "Cărei materii îi corespunde acest material"
       placeholder: "Ex: POO"
     validations:
       required: true
 
-    
-    - type: input
+  - type: input
     id: prof
     attributes:
       label: "Profesorul titular"
