@@ -1,0 +1,44 @@
+name: "📂 Upload Materiale"
+description: "Trimite materiale pentru a ajuta urmatoarele generații"
+title: "[Material] - "
+labels: ["materiale"]
+body:
+  - type: input
+    id: nume
+    attributes:
+      label: "Nume material"
+      description: "Cum vrei să apară materialul?"
+      placeholder: "Ex: Algoritmi_Grafuri"
+    validations:
+      required: true
+      
+  - type: input
+    id: nume
+    attributes:
+      label: "Grupa/Seria pentru care este destinat Materialul"
+      description: "Cum vrei să apară materialul?"
+      placeholder: "Ex: Seriile 13 & 15"
+    validations:
+      required: true
+
+    - type: input
+    id: nume
+    attributes:
+      label: "Grupa/Seria pentru care este destinat Materialul"
+      description: "Cum vrei să apară materialul?"
+      placeholder: "Ex: Seriile 13 & 15"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: descriere
+    attributes:
+      label: "Descriere"
+      description: "Descrie pe scurt materialul."
+      placeholder: "Ex: Note de curs, capitolul 3"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "👉 **Atașează fișierul la issue (drag & drop sau upload)**"
