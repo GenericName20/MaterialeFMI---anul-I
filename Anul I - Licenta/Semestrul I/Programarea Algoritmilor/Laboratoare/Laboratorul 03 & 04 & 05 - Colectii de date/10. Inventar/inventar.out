@@ -1,0 +1,8 @@
+B) Produsele care se gasesc in toate magazinele: Nu exista
+C) Toate produsele din toate magazinele: {'60', '15', '3', '369', '69', '5', '10', '7', '9', '1', '50', '269', '13', '18', '25', '4', '169', '29', '2', '20', '11', '30', '12'}
+D) Magazinul Lidl are urmatoarele produce exclusiviste: {'15', '18', '25', '10', '12'}
+D) Magazinul Kaufland are urmatoarele produce exclusiviste: {'11', '9', '7', '13'}
+D) Magazinul Carrefour are urmatoarele produce exclusiviste: {'60', '50'}
+D) Magazinul Cora are urmatoarele produce exclusiviste: {'4', '1', '2'}
+D) Magazinul Altex are urmatoarele produce exclusiviste: {'29'}
+D) Magazinul MediaGalaxy are urmatoarele produce exclusiviste: N/A

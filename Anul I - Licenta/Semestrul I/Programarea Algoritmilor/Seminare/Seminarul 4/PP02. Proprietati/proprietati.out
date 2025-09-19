@@ -1,0 +1,22 @@
+a) Pozitiile valorilor strict pozitive din tuplul:
+[12, -2, 3, -4, 67, -9, -10, 23]:
+(Pozitia <0>, valoarea <12>) (Pozitia <2>, valoarea <3>) (Pozitia <4>, valoarea <67>) (Pozitia <7>, valoarea <23>) 
+
+b) Pozitiile semnelor de punctuatie din sirul de caractere:
+"Coca-Cola and Santa Claus have a special connection in holiday tradition. 
+ In the 1930s, Coca-Cola's advertising campaigns popularized the modern image 
+ of Santa Claus as a jolly, red-suited figure. Artist Haddon 
+ Sundblom created iconic illustrations of Santa enjoying a Coke, which 
+ brought warmth and joy to the brand's holiday message. Today, 
+ this association remains strong, making Coca-Cola and Santa Claus symbols 
+ of Christmas cheer worldwide.":
+(Pozitia <4>, valoarea <->) (Pozitia <72>, valoarea <.>) (Pozitia <86>, valoarea <,>) (Pozitia <92>, valoarea <->) (Pozitia <97>, valoarea <'>) (Pozitia <176>, valoarea <,>) (Pozitia <181>, valoarea <->) (Pozitia <195>, valoarea <.>) (Pozitia <273>, valoarea <,>) (Pozitia <316>, valoarea <'>) (Pozitia <334>, valoarea <.>) (Pozitia <341>, valoarea <,>) (Pozitia <374>, valoarea <,>) (Pozitia <387>, valoarea <->) (Pozitia <445>, valoarea <.>) 
+
+c) Pozitiile cuvintelor care sunt anagrame cu <emerit> din sirul de caractere:
+"maria lupul vulcan gerila ana caiac emerit treime maria":
+(Pozitia <6>, valoarea <emerit>) (Pozitia <7>, valoarea <treime>) 
+
+d) Pozitiile numerelor cu <2> cifre si suma cifrelor egala cu <8> din tuplul:
+[12, 2, 3, 4, 67, 9, 10, 23]:
+(Pozitia <0>, valoarea <12>) (Pozitia <4>, valoarea <67>) (Pozitia <6>, valoarea <10>) (Pozitia <7>, valoarea <23>) 
+

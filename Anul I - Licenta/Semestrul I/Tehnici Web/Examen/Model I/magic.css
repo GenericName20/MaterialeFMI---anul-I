@@ -1,0 +1,26 @@
+#magicBall{
+    background-color: black;
+    border-radius: 50%;
+    width: 20vw;
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#responseFace{
+    background-color: white;
+    border-radius: 50%;
+    width: 13vw;
+    height: 13vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#initial{
+    font-size: 10vh;
+    font-style: oblique;
+}
+
+#magicBall:hover, #responseFace:hover, #initial:hover{
+    cursor: grab;
+}

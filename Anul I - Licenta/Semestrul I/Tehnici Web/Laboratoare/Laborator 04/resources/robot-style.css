@@ -1,0 +1,84 @@
+/* 
+Înlocuiți simbolurile ? cu valori potrivite pentru 
+a completa regulile CSS de mai jos.
+*/
+
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.robot {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  /* justify-content: ?;
+  align-items: ?;
+  flex-direction: ?; */
+  background: #a6b4c4;
+  background-image: radial-gradient(#a6b4c4,#59798e);
+}
+
+.robot_eyes {
+  width: 400px;
+  height: 150px;
+  border: 3px solid black;
+  border-radius: 200px;
+  position: relative;
+  display: flex;
+  /* justify-content: ?;
+  align-items: ?; */
+}
+
+.robot_socket {
+  width: 375px;
+  height: 125px;
+  border: 3px solid black;
+  border-radius: 200px;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  /* justify-content: ?; */
+
+}
+
+.robot_eye {
+  height: 145px;
+  width: 145px;
+  background-color: #fefbb8;
+  border-radius: 100%;
+  margin: -10px 10px 0px 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* justify-content: ?; */
+}
+.robot_pupil {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+}
+
+.robot_mouth {
+  width: 275px;
+  height: 100px;
+  background-color: black;
+  margin-top: 80px;
+  border-radius: 50px;
+  border: 4px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* flex-wrap: ?;
+  overflow: ?;
+  justify-content: ?; */
+}
+
+.robot_tooth {
+  height: 46px;
+  width: 30px;
+  background-color: #fefbb8;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}

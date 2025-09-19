@@ -1,0 +1,25 @@
+#info{
+    position: absolute;
+    top: 200px;
+    left: 10px;
+}
+
+#lodge{
+    width: 300px;
+}
+
+#character{
+    font-weight: bold;
+}
+
+#quote{
+    font-style: italic;
+}
+
+#season_episode{
+    visibility: hidden;
+}
+
+#info:hover #season_episode{
+    visibility: visible;
+}

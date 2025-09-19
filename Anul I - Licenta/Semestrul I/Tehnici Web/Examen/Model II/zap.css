@@ -1,0 +1,89 @@
+#id{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.frame{
+    width: 400px;
+    height: 300px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+}
+.content{
+    display: flex;
+    background-color: white;
+    width: 280px;
+    height: 240px;
+    z-index: 10;
+    padding: 10px;
+    margin-left: 10px;
+}
+.content div:nth-of-type(1){
+    height: 240px;
+    width: 66px;
+    background-color: white;
+}
+.content div:nth-of-type(2){
+    height: 240px;
+    width: 66px;
+    background-color: yellow;
+}
+.content div:nth-of-type(3){
+    height: 240px;
+    width: 66px;
+    background-color: green;
+}
+.content div:nth-of-type(4){
+    height: 240px;
+    width: 66px;
+    background-color: turquoise;
+}
+.content div:nth-of-type(5){
+    height: 240px;
+    width: 66px;
+    background-color: magenta;
+}
+.content div:nth-of-type(6){
+    height: 240px;
+    width: 66px;
+    background-color: red;
+}
+.content div:nth-of-type(7){
+    height: 240px;
+    width: 66px;
+    background-color: blue;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: auto;
+    left: 330px;
+    position: absolute;
+    z-index: 100;
+}
+.big, .medium, .small{
+    left: 400px;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: lightgray;
+}
+.big{
+    width: 50px;
+    height: 50px;
+}
+.medium{
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+}
+.small{
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+}
+#suplimentare{
+    visibility: hidden;
+}
+#info:hover #suplimentare{
+    visibility: visible;
+}

@@ -1,0 +1,208 @@
+[
+  {
+    "name": "R1",
+    "regex": "a*",
+    "test_strings": [
+      { "input": "", "expected": true },
+      { "input": "a", "expected": true },
+      { "input": "aaaa", "expected": true },
+      { "input": "b", "expected": false }
+    ]
+  },
+  {
+    "name": "R2",
+    "regex": "(ab)*",
+    "test_strings": [
+      { "input": "", "expected": true },
+      { "input": "ab", "expected": true },
+      { "input": "abab", "expected": true },
+      { "input": "aba", "expected": false }
+    ]
+  },
+  {
+    "name": "R3",
+    "regex": "a(b|c)*",
+    "test_strings": [
+      { "input": "a", "expected": true },
+      { "input": "ab", "expected": true },
+      { "input": "acb", "expected": true },
+      { "input": "b", "expected": false }
+    ]
+  },
+  {
+    "name": "R4",
+    "regex": "(a|b)*abb",
+    "test_strings": [
+      { "input": "abb", "expected": true },
+      { "input": "aabb", "expected": true },
+      { "input": "ababb", "expected": true },
+      { "input": "ababa", "expected": false }
+    ]
+  },
+  {
+    "name": "R5",
+    "regex": "0(0|1)*1",
+    "test_strings": [
+      { "input": "01", "expected": true },
+      { "input": "001", "expected": true },
+      { "input": "011", "expected": true },
+      { "input": "10", "expected": false }
+    ]
+  },
+  {
+    "name": "R6",
+    "regex": "(a|b|c)+",
+    "test_strings": [
+      { "input": "a", "expected": true },
+      { "input": "abc", "expected": true },
+      { "input": "cbab", "expected": true },
+      { "input": "", "expected": false }
+    ]
+  },
+  {
+    "name": "R7",
+    "regex": "a?b+",
+    "test_strings": [
+      { "input": "b", "expected": true },
+      { "input": "ab", "expected": true },
+      { "input": "abb", "expected": true },
+      { "input": "a", "expected": false }
+    ]
+  },
+  {
+    "name": "R8",
+    "regex": "(ab|cd)+",
+    "test_strings": [
+      { "input": "ab", "expected": true },
+      { "input": "cd", "expected": true },
+      { "input": "abcd", "expected": true },
+      { "input": "ac", "expected": false }
+    ]
+  },
+  {
+    "name": "R9",
+    "regex": "(a|b)*a(a|b)",
+    "test_strings": [
+      { "input": "aa", "expected": true },
+      { "input": "ba", "expected": false },
+      { "input": "aba", "expected": false },
+      { "input": "ab", "expected": true }
+    ]
+  },
+  {
+    "name": "R10",
+    "regex": "(a*b*)*",
+    "test_strings": [
+      { "input": "", "expected": true },
+      { "input": "a", "expected": true },
+      { "input": "b", "expected": true },
+      { "input": "aabbbabba", "expected": true }
+    ]
+  },  
+  {
+    "name": "R11",
+    "regex": "(a|b)*abb(a|b)*",
+    "test_strings": [
+      { "input": "abb", "expected": true },
+      { "input": "aabb", "expected": true },
+      { "input": "ababb", "expected": true },
+      { "input": "aba", "expected": false }
+    ]
+  },
+  {
+    "name": "R12",
+    "regex": "((ab)*|(ba)*)c",
+    "test_strings": [
+      { "input": "c", "expected": true },
+      { "input": "abc", "expected": true },
+      { "input": "abababc", "expected": true },
+      { "input": "bac", "expected": true },
+      { "input": "abac", "expected": false }
+    ]
+  },
+  {
+    "name": "R13",
+    "regex": "(a(bc)*d)*",
+    "test_strings": [
+      { "input": "", "expected": true },
+      { "input": "ad", "expected": true },
+      { "input": "abcd", "expected": true },
+      { "input": "abcbcd", "expected": true },
+      { "input": "abcbcad", "expected": false }
+    ]
+  },
+  {
+    "name": "R14",
+    "regex": "a(b|c(d|e))*f",
+    "test_strings": [
+      { "input": "af", "expected": true },
+      { "input": "abf", "expected": true },
+      { "input": "acddef", "expected": false },
+      { "input": "acf", "expected": false },
+      { "input": "adf", "expected": false }
+    ]
+  },
+  {
+    "name": "R15",
+    "regex": "(a|b)*((aa)(bb))(a|b)*",
+    "test_strings": [
+      { "input": "aabb", "expected": true },
+      { "input": "abaaabbab", "expected": true },
+      { "input": "ababb", "expected": false },
+      { "input": "aabbaa", "expected": true }
+    ]
+  },
+  {
+    "name": "R16",
+    "regex": "(a?b?c?)*",
+    "test_strings": [
+      { "input": "", "expected": true },
+      { "input": "abcabc", "expected": true },
+      { "input": "abcc", "expected": true },
+      { "input": "aabbcc", "expected": true }
+    ]
+  },
+  {
+    "name": "R17",
+    "regex": "((ab|cd)+e)*",
+    "test_strings": [
+      { "input": "", "expected": true },
+      { "input": "abe", "expected": true },
+      { "input": "ababe", "expected": true },
+      { "input": "abecdabe", "expected": true }
+    ]
+  },
+  {
+    "name": "R18",
+    "regex": "(a(bc)?d)+",
+    "test_strings": [
+      { "input": "ad", "expected": true },
+      { "input": "abcd", "expected": true },
+      { "input": "adbcd", "expected": false },
+      { "input": "abcbcd", "expected": false }
+    ]
+  },
+  {
+    "name": "R19",
+    "regex": "(a|b)+c+d*",
+    "test_strings": [
+      { "input": "abc", "expected": true },
+      { "input": "aabcc", "expected": true },
+      { "input": "bbccddd", "expected": true },
+      { "input": "cc", "expected": false },
+      { "input": "d", "expected": false }
+    ]
+  },
+  {
+    "name": "R20",
+    "regex": "a(bc)*d(e|f(g|h))*",
+    "test_strings": [
+      { "input": "ad", "expected": true },
+      { "input": "abcd", "expected": true },
+      { "input": "abcbcd", "expected": true },
+      { "input": "adf", "expected": false },
+      { "input": "adfgh", "expected": false },
+      { "input": "adfg", "expected": true }
+    ]
+  }
+]

@@ -1,0 +1,154 @@
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.robot {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #a6b4c4;
+  background-image: radial-gradient(#a6b4c4,#59798e);
+}
+
+.robot_eyes {
+  width: 400px;
+  height: 150px;
+  border: 3px solid black;
+  border-radius: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.robot_socket {
+  width: 375px;
+  height: 125px;
+  border: 3px solid black;
+  border-radius: 200px;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.robot_eye {
+  height: 145px;
+  width: 145px;
+  background-color: #fefbb8;
+  border-radius: 100%;
+  margin: -10px 10px 0px 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.robot_pupil {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+}
+
+.robot_mouth {
+  width: 275px;
+  height: 100px;
+  background-color: black;
+  margin-top: 80px;
+  border-radius: 50px;
+  border: 4px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: space-around;
+}
+
+.robot_tooth {
+  height: 46px;
+  width: 30px;
+  background-color: #fefbb8;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+/* reguli pentru pleoape */
+
+.robot_eye::before {
+  content: "";
+  position: absolute;
+  width: 145px;
+  height: 50px;
+  top: -50px;
+  background: black;
+  animation-name: topEyelid;
+  /* Adăugați reguli css aici pentru 
+  a defini o animație cu durata de 5s,
+  care să înceapă cu 1s întârziere,
+  să fie rulată în buclă, 
+  cu viteză mai mică la început și final.
+  */ 
+}
+
+.robot_eye::after {
+  content: "";
+  position: absolute;
+  width: 145px;
+  height: 50px;
+  bottom: -50px;
+  background: black;
+  animation-name: bottomEyelid;
+  /* Adăugați reguli css aici pentru 
+  a defini o animație cu durata de 5s,
+  care să înceapă cu 1s întârziere,
+  să fie rulată în buclă, 
+  cu viteză mai mică la început și final
+  */
+}
+
+/* 
+Înlocuiți simbolurile ? cu valori potrivite 
+pentru a obține o animație în care robotul
+închide pleoapele în prima parte a animației, 
+ține pleoapele închise în punctele intermediare
+între 20% și 80% din durata animației, și
+deschide pleoapele în ultima parte a animației.
+*/
+@keyframes topEyelid {
+  /* închide pleoapele */
+  0% {
+    transform: ?;
+  }
+  /* ține pleoapele închise */
+  20% {
+    transform: ?;
+  }
+  80% {
+    transform: ?;
+  }
+  /* deschide pleoapele */
+  100% {
+    transform: ?;
+  }
+}
+
+@keyframes bottomEyelid {
+  0% {
+    transform: ?;
+  }
+  20% {
+    transform: ?;
+  }
+  80% {
+    transform: ?;
+  }
+  100% {
+    transform: ?;
+  }
+}

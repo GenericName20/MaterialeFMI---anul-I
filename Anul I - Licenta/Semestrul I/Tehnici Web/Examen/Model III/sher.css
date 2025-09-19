@@ -1,0 +1,74 @@
+body{
+    background-color: turquoise;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(5, 80px);
+    grid-template-rows: repeat(7, 80px);
+    gap: 4px;
+}
+
+.container div{
+    padding: 26px;
+    border: 3px dashed indigo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#circle{
+    border: none;
+    border-radius: 50%;
+    background-color: ivory;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+}
+
+#circle:active{
+    color: crimson;
+    background-color: crimson;
+    transform: scale(0.5);
+    transition: transform 0.4s ease;
+}
+
+#A, #E{
+    background-color: darkorange;
+}
+#O, #B, #C, #D{
+    background-color: yellow;
+}
+
+#A{
+    grid-column: 1;
+    grid-row: 2;
+}
+#O{
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+}
+#B{
+    grid-column: 3; 
+    grid-row: 3;
+}
+#C{
+    grid-column: 3;
+    grid-row: 4;
+}
+#D{
+    grid-column: 3 / 6;
+    grid-row: 5 / 7;
+}
+#E{
+    grid-column: 4;
+    grid-row: 7;
+}
+
+@media (min-width: 330px) and (max-width: 620px){
+    .container{
+        display: inline;
+    }
+    #circle{
+        transform: scaleX(0.5);
+    }
+}

@@ -1,0 +1,270 @@
+ITEM,RASPUNS PROPRIU,RASPUNS CORECT,GRESELI / OBS,RATIONAMENT CORECT,PUNCTAJ POSIBIL,PUNCTAJ ASTEPTAT,CF. BAREM 
+1.1,B,A,In loc de B trebuia A,"Observam variantele din grila:
+A) x % 2 == 0 (par) si (y + 1) % 2 != 0 (impar) => y % 2 == 0 (par) => Valid
+B) (x - y) / 2 == 0 (diferenta a doua numere impare este intotdeauna para, dar nici macar nu se calculeaza modulo) => Invalid
+C) (x + y) % 2 == 0 && (x - y) % 2 == 0 (diferenta si suma a doua numere impare este intotdeauna para) => Invalid
+D) x % 2 == y % 2 (conditia este ca paritatea sa fie aceeasi, nu neaparat ca numerele sa fie pare) => Invalid",4,0,
+1.2,C,D,In loc de C trebuia D,"Observam ce se intampla cu 
+n = 200211
+c = 2
+
+Avem 3 cazuri pentru fiecare cifra a numarului
+1. n == 0 -> Ri = 0
+2. n % 10 == c -> Ri = f(n/10, c)
+3. altfel -> Ri = n % 10 + 10 * f(n / 10, c) 
+unde i este nivelul de recurenta curent
+
+Pasul I: 200211 = 0 (fals), testam 200211 % 10 == c <=> 1 == 2 (fals), atunci sigur R1 = 1 + 10 * f(20021, 2) = 1 + 10 * R2 = 1 + 10 * 1 = 11
+Pasul II: 20021 = 0 (fals), testam 20021 % 10 == c <=> 1 == 2 (fals), atunci sigur R2 = 1 + 10 * f(2002, 2) = 1 + 10 * R3 = 1 + 10 *  0 = 1
+Pasul III: 2002 = 0 (fals), testam 2002 % 10 == c <=> 2 = 2 (adevarat), in acest caz R3 = f(200, 2) = R4 = 0
+Pasul IV: 200 = 0 (fals), testam 200 % 10 == c <=> 0 = 2 (fals), atunci sigur R4 = 0 + 10 * f(20, 2) = 0 + 10 * R5 = 0 + 10 * 0 = 0
+Pasul V: 20 = 0 (fals), testam 20 % 10 == c <=> 0 = 2 (fals), atunci sigur R5 = 0 + 10 * f(2, 2) = 0 + 10 * R6 = 0 + 10 *  0 = 0
+Pasul VI :2 = 0 (fals), testam 2 % 10 == c <=> 2 = 2 (adevarat), in acest caz R6 =  f(0, 2) = R7 = 0
+Pasul VII: 0 = 0 (adevarat), in acest caz R7 = 0
+
+Intuim si observam ca aceasta functie construieste recurent pe baza parametrului 'n' un nou numar, pastrand ordinea initiala a cifrelor, dar sarind peste cele egale cu 'c'.
+
+Orice numar care contine cifrele '2', '0', '2', '1' si alte cifre egale exclusiv cu C este corect. Din grila, putem extrage varianta D) N = 720721, C = 7. Dupa eliminare: R1 = 2021 , deci raspunsul este favorabil.",4,0,
+1.3,B,D,In loc de B trebuia D,"Observam variantele din grila:
+A) m[42/42] = m[1], dar avem tablou bidimensional, deci este incorect sintactic
+B) m[42|42] = m[42], dar avem tablou bidimensional, deci sintaxa este incorecta
+C) m[42] : [57] - sintaxa incorecta
+D) m[42][57] - pare corect sintactic, putem verifica daca ne aflam pe diagonala secundara cu ajutorul formulei i + j = n, unde i = 42 si j = 57 <=> 42 = 99 - 57 (folosim i + j = n pentru ca avem indexare de la 0), ceea ce este adevarat",4,0,
+1.4,D,B,In loc de D trebuia B,"Un graf neorientat poate fi reprezentat prin liste de adiacenta: 1: [2, 3]; 2: [1, 3]; 3: [1, 4, 5]; 4: [3, 5]; 5: [3, 4, 6], 6: [5]. Definitii general valabile: Ciclu = un lant in care primul nod coincide cu ultimul; Ciclu elementar = ciclu in care difera toate nodurile, cu exceptia primului si ultimului.
+
+Observam variantele din grila:
+A) 1, 2, 3 (Schema) 1 -> 2 -> 3 (Posibil, dar nu se termina cu 1 <primul nod>, deci nu este ciclu)
+B) 1, 2, 3, 1 (Schema) 1 -> 2 -> 3 -> 1 (Posibil, exista aceste muchii, se termina cu 1 <primul nod> este ciclu, iar definitia ciclului elementar este respectata)
+C) 1, 2, 3, 4, 5, 3, 1 (Schema) 1 -> 2 -> 3 -> 4 -> 5 -> 3 -> 1 (Chiar daca ar fi ciclu, nu ar fi elementar, deoarece exista doua nodurile egale care nu sunt extremitati)
+D) 1, 2, 3, 4, 5, 6, 1 (Schema) 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 1 (6 -> 1 este imposibil, deoarece nu exista muchie de la 6 la 1, deci nu este o optiune valida)",4,0,
+1.5,D,C,In loc de D trebuia C,"Toate nodurile de pe acelasi nivel au numar egal de ""fii"" -> Pe fiecare nivel, din fiecare nod pleaca acelasi numar de muchii, nr. noduri de pe un nivel anterior nu poate fi la fel ca cel de pe nivelul curent, numarul de fii creste pe fiecare nivel. Putem construi un arbore binar si stim ca intr-un astfel de arbore numarul de noduri de pe nivelul X este pow(2, X), deci pow(2, 3) = 8.",4,0,
+2.1.a,a) 111112121,a) 1111121121 ,Am uitat sa scriu un 1,"x = 8, y = 5 (nr. naturale nenule)
+x > y <=> 8 > 5 (Adevarat) => x = 5, y = 8
+
+nr = 1
+i = 8: scrie '1', nr >= x <=> 1 >= 5 (Fals), nr = 3, scrie '1'
+i = 7: scrie '1', nr >= x <=> 3 >= 5 (Fals), nr = 9, scrie '1'
+i = 6: scrie '1', nr >= x <=> 9 >= 5 (Adevarat) => scrie '2',  nr = 27, scrie '1'
+i = 5: scrie '1', nr >= x <=> 27 >= 5 (Adevarat) => scrie '2', nr = 81, scrie '1'
+Raspuns: 1111121121",6,5,(Numai 5p. daca doar primele sapte cifre sunt conform cerintei.)
+2.1.b,"9, 15","6, 15",Am nimerit doar 15.,"Ruleaza algoritmul si vezi daca se respecta cerinta, puncteaza daca check() e True. In output.txt trebuie sa fie rezultatul rularii programului C++ cu x = 10 si y = valori user.
+import os
+file = os.path.dirname(__file__) + ""/output.txt""
+def check():
+    with open(file, ""r"") as f:
+        output = f.read().strip()
+    
+    if (output.count(""2"") != 3):
+        return False
+    return True
+
+print(check())",6,3,"Se acorda cate 3p. pentru fiecare dintre cele doua
+numere conform cerintei."
+2.1.c,"#include <iostream>
+using namespace std;
+int main() {
+    int x, y; cin >> x >> y;
+    if (x > 0 && y > 0) {
+        if (x > y) swap(x, y);
+        int nr = 1;
+        for (int i = y; i >= x; --i) {
+            cout << 1 << """";
+            if (nr >= x) {
+                cout << 2 << """";
+            }
+            nr = nr * 3;
+            cout << 1 << """";
+        }
+    }
+    return 0;
+}","#include <iostream>
+using namespace std;
+int main() {
+    int x, y; cin >> x >> y;
+    if (x > y) { int c; c = x; x = y; y = c; }
+    int nr = 1;
+    for (int i = y; i >= x; i--) {
+        cout << 1;
+        if (nr >= x) {
+            cout << 2;
+        }
+        nr = nr * 3;
+        cout << 1;
+    }
+    return 0;
+}","1. Am adaugat verificarea if (x > 0 && y > 0) dupa citire pentru a verifica daca sunt numere naturale nenule , dar la BAC mi-au fost scazute 0.1 pentru verificarea asta, pentru ca nu am respectat structura pseudocodului.
+2. Am facut for-ul cu --i. (nu e greseala)
+3. Am pus sirul vid dupa fiecare cout (nu e greseala)
+4. Am facut swap (in barem pierzi 1pct pentru asta)",Urmarim structura pseudocodului.,10,8,"(Pierd doar 'Instructiuni de decizie (1/2), implementarea operatiei de interschimbare (1)')"
+2.1.d,"citeste x, y (numere naturale nenule)
+daca x > y atunci x <-> y
+nr <- 1
+i = y
+repeta
+  scrie '1'
+  daca nr >= x atunci
+     scrie '2'
+  nr = nr * 3
+  scrie '1'
+  i <- i - 1
+pana cand (i < x)
+  ","citeste x, y (numere naturale nenule)
+daca x > y atunci x <-> y
+nr <- 1
+i <- y
+cat timp i >= x executa
+  scrie 1
+  daca nr >= x atunci
+     scrie 2
+  nr <- nr * 3
+  scrie 1
+  i <- i - 1
+  ","1. Am folosit structura cu test final.
+2. Am stringuit output-ul (?)
+3. Am alternat <- cu =","Urmarim structura initiala a pseudocodului din cerinta. Trebuie sa folosim 'structura repetitiva cu test initial', despre care stim ca este while, deci in limbaj natural 'cat timp ... Executa'",6,4,(Pierd doar 'utilizare a unei structuri repetitive cu test initial (*)' - 2p)
+2.2,"Primul raspuns: [2, 5] = {ciocarlie, scatiu}, al doilea raspuns: [3, 5] = {mierla, scatiu}","{ciocarlie, scatiu}
+{mierla, scatiu}","Am scris in propozitie, am lasat si lista de indici.","Codificam multimea {cinteza, ciocarlie, mierla, privighetoare, scatiu} folosind indecsii, deci vom avea {1, 2, 3, 4, 5}. Generam prin tehnica toate submultimile de cardinal minim 2 si maxim 4, deoarece stim ca mierla (3) si privighetoarea (4) nu pot apartine niciodata aceleiasi submultimi. Primele 4 solutii sunt: (cinteza, ciocarlie) = [1, 2], (cinteza, ciocarlie, mierla} = [1, 2, 3], (cinteza, ciocarlie, mierla, scatiu) = [1, 2, 3, 5], (cinteza, ciocarlie, privighetoare) = [1, 2, 4]. Observam codificarea pentru multimea ceruta: {ciorcalie, privighetoare, scatiu} = [2, 4, 5]. Incercam [2, 4, 6], imposibil. Incercam [2, 5] - Posibil (primul raspuns). Incercam [3, 4] - Imposibil (3 nu poate fi in aceeasi submultime cu 4). Incercam [3, 5] - Posibil (al doilea raspuns). Ne oprim, am obtinut cele doua raspunsuri.
+Primul raspuns: [2, 5] = {ciocarlie, scatiu}, al doilea raspuns: [3, 5] = {mierla, scatiu}",6,6,
+2.3,"fs.a = f.a * 2021 - f.b * 2020;
+fs.b = f.a * f.b;","struct fractie { int a, b; } f, fs;
+fs.a = f.a * 2021 - f.b * 2020; fs.b = f.b * 2021;",Nu am mai scris struct. In fs.b am scris f.a in loc de 2021.,"(f.a / f.b) - (2020 / 2021) = fsa / fsb <=> (f.a * 2021 - f.b * 2020) / (f.b * 2021) = fs.a / fs.b
+fs.a = f.a * 2021 - f.b * 2020; fs.b = f.b * 2021;",6,5,Atribuiri conform cerintei (*) (2/3 - (*) Se acorda numai 2p. daca doar numitorul sau doar numaratorul au fost calculate conform cerintei.)
+3.1,"void divPrim(long n, int& s)
+{
+	int d = 2;
+	while (n > 1)
+	{
+		int k = 0;
+		while (!(n % d))
+		{
+			n /= d; k++;
+		}
+		if (k % 2 == 0)
+			s += d;
+		d += 1;
+	}
+}","#include <iostream>
+using namespace std;
+void divPrim(long n, int& s)
+{
+	int d = 2;
+	while (n > 1)
+	{
+		int k = 0;
+		while (!(n % d))
+		{
+			n /= d; k++;
+		}
+		if (k % 2)
+			s += d;
+		d += 1;
+	}
+}
+int main()
+{
+	int s = 0;
+	divPrim(360, s);
+	cout << s;
+	return 0;
+}","1. Nu am mai apelat functia in main (nu e greseala)
+2. Am identificat gresit puterile impare.",Urmareste daca respecta baremul.,10,9,"(**) Se acorda cate 1p. pentru fiecare aspect (identificare a unui divizor, identificare a unui numar/divizor prim, identificare a puterii unui divizor in descompunerea in factori primi, identificare a unei puteri impare, algoritm de baza pentru insumarea unei serii de valori, valori suport insumate) conform cerintei"
+3.2,"#include <iostream>
+using namespace std;
+int main()
+{
+	char vocale[6], r[21][11], cuv[11];
+	strcpy(vocale, ""aeiou"");
+	int n, k, rcount(0);
+	cin >> n >> k;
+	cin.get();
+	for (int i = 0; i < n; ++i)
+	{
+		cin.getline(cuv, 10);
+		if (strchr(vocale, cuv[strlen(cuv) - 1]))
+			strcpy(r[rcount++], cuv);
+	}
+	if (rcount < k)
+		cout << ""nu exista"";
+	else
+		for (int i = 1; i <= k; ++i)
+			cout << r[i] << '\n';
+	return 0;
+}","#include <iostream>
+#include <string.h>
+using namespace std;
+int main()
+{
+	char vocale[6], r[21][11], cuv[11];
+	strcpy(vocale, ""aeiou"");
+	int n, k, rcount(0);
+	cin >> n >> k;
+	cin.get();
+	for (int i = 0; i < n; ++i)
+	{
+		cin.getline(cuv, 11);
+		if (strchr(vocale, cuv[strlen(cuv) - 1]))
+			strcpy(r[++rcount], cuv);
+	}
+	if (rcount < k)
+		cout << ""nu exista"";
+	else
+		for (int i = 1; i <= k; ++i)
+			cout << r[i] << '\n';
+	return 0;
+}","1. Nu am inclus <string.h>
+2. Am citit 10 (9 + '\n') cu cin.getline(), in loc de 11.
+3. In loc de r[++rcount] am scris r[rcount++], desi eu la final afisez de la 1 la rcount.",Urmareste daca respecta baremul.,10,7,"(0/1) - citire a tuturor datelor - nu am facut bine citirea
+(1/2 - afisare a datelor si tratare a cazului, nu exista (**) - am parcurs de la 1 la rcount, trebuia de la 0 la rcount - 1)
+(0/1) declarare a variabilelor simple, corectitudine globala a programului - nu am inclus <string.h>"
+3.3.a,"#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream f(""bac.txt"");
+int main()
+{
+	int x, y, p(10);
+	long n, last(-1), ans1(-1), ans2(-1);
+	f >> x;
+	y = x;
+	while (y /= 10) p *= 10;
+	while (f >> n) {
+		if (last > -1 && last % p == x && n % p == x)
+		{
+			ans1 = last;
+			ans2 = n;
+		}
+		last = n;
+	}
+	if (!(ans1 + 1) || !(ans2 + 1))
+		cout << ""nu exista"";
+	else
+		cout << ans1 << "" "" << ans2;
+	f.close();
+	return 0;
+}","Algoritmul prezentat este eficient deoarece opereaza in complexitate O(n), construind raspunsurile in acelasi timp cu obtinerea valorilor din fisierul text. Memoria O(1) se datoreaza evitarii folosirii vectorilor pentru a indexa valorile din fisierul text. Sunt manipulate doua valori consecutive prin stocarea celei curente in variabila n si a celei anterioare in variabila last.",Am interschimbat raspunsul de la punctul a cu cel de la punctul b,Urmareste daca respecta baremul.,2,2,
+3.3.b,"Algoritmul prezentat este eficient deoarece opereaza in complexitate O(n), construind raspunsurile in acelasi timp cu obtinerea valorilor din fisierul text. Memoria O(1) se datoreaza evitarii folosirii vectorilor pentru a indexa valorile din fisierul text. Sunt manipulate doua valori consecutive prin stocarea celei curente in variabila n si a celei anterioare in variabila last.","#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream f(""bac.txt"");
+int main()
+{
+	int x, y, p(10);
+	long n, last(-1), ans1(-1), ans2(-1);
+	f >> x;
+	y = x;
+	while (y /= 10) p *= 10;
+	while (f >> n) {
+		if (last > -1 && last % p == x && n % p == x)
+		{
+			ans1 = last;
+			ans2 = n;
+		}
+		last = n;
+	}
+	if (!(ans1 + 1) || !(ans2 + 1))
+		cout << ""nu exista"";
+	else
+		cout << ans1 << "" "" << ans2;
+	f.close();
+	return 0;
+}",,Urmareste daca respecta baremul.,8,8,

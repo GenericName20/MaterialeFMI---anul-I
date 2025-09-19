@@ -1,0 +1,39 @@
+A) Exista muchii intre nodurile: [(1, 2), (1, 3), (1, 6), (2, 4), (2, 5), (3, 6), (3, 7), (4, 6)]
+
+B) Listele de adiacenta:
+Nodul 1: [2, 3, 6]
+Nodul 2: [1, 4, 5]
+Nodul 3: [1, 6, 7]
+Nodul 6: [1, 3, 4]
+Nodul 4: [2, 6]
+Nodul 5: [2]
+Nodul 7: [3]
+
+C) Matricea de adiacenta:
+[0, 1, 1, 0, 0, 1, 0]
+[1, 0, 0, 1, 1, 0, 0]
+[1, 0, 0, 0, 0, 1, 1]
+[0, 1, 0, 0, 0, 1, 0]
+[0, 1, 0, 0, 0, 0, 0]
+[1, 0, 1, 1, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0]
+
+D) BFS:
+BFS din nodul 1: [1, 2, 3, 6, 4, 5, 7]
+BFS din nodul 2: [2, 1, 4, 5, 3, 6, 7]
+BFS din nodul 3: [3, 1, 6, 7, 2, 4, 5]
+BFS din nodul 4: [4, 2, 6, 1, 5, 3, 7]
+BFS din nodul 5: [5, 2, 1, 4, 3, 6, 7]
+BFS din nodul 6: [6, 1, 3, 4, 2, 7, 5]
+BFS din nodul 7: [7, 3, 1, 6, 2, 4, 5]
+BFS din nodul START (4): [4, 2, 6, 1, 5, 3, 7]
+
+E) DFS:
+DFS din nodul 1: [1, 2, 4, 6, 3, 7, 5]
+DFS din nodul 2: [2, 1, 3, 6, 4, 7, 5]
+DFS din nodul 3: [3, 1, 2, 4, 6, 5, 7]
+DFS din nodul 4: [4, 2, 1, 3, 6, 7, 5]
+DFS din nodul 5: [5, 2, 1, 3, 6, 4, 7]
+DFS din nodul 6: [6, 1, 2, 4, 5, 3, 7]
+DFS din nodul 7: [7, 3, 1, 2, 4, 6, 5]
+DFS din nodul START(4): [4, 2, 1, 3, 6, 7, 5]
